@@ -315,13 +315,14 @@
                   data-aos-delay="200"
                 >
                   <h3>Pendaftaran</h3>
-                  <form>
+                  <form id="pendaftaranForm">
                     <div class="mb-3">
                       <label for="name" class="form-label">Nama:</label>
                       <input
                         type="text"
                         class="form-control"
                         id="name"
+                        name="nama"
                         required=""
                       />
                     </div>
@@ -331,19 +332,31 @@
                         type="email"
                         class="form-control"
                         id="email"
+                        name="email"
                         required=""
                       />
                     </div>
                     <div class="mb-3">
                       <label for="phone" class="form-label">No Hp:</label>
-                      <input type="tel" class="form-control" id="phone" />
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="phone"
+                        name="phone"
+                        required="number"
+                      />
                     </div>
                     <div class="mb-3">
                       <label for="student-type" class="form-label"
                         >Kategori</label
                       >
-                      <select class="form-select" id="student-type">
-                        <option selected="">Pilih Salah Satu</option>
+                      <select
+                        class="form-select"
+                        id="kategori"
+                        name="kategori"
+                        required
+                      >
+                        <option selected="" disabled>Pilih Salah Satu</option>
                         <option value="SMK">SMK</option>
                         <option value="Mahasiswa">Mahasiswa</option>
                         <option value="Karyawan Perusahaan">
@@ -432,6 +445,33 @@
         </div>
       </section>
       <!-- /Event Section -->
+
+      <script>
+        document.getElementById('pendaftaranForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+          const nama = document.getElementById('nama').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const phone = document.getElementById('phone').value.trim();
+          const kategori = document.getElementById('kategori').value;
+
+          if (!nama || !email || !phone || !kategori) {
+            alert('Mohon lengkapi semua data');
+            return;
+          }
+
+          // Format pesan yang akan dikirim ke WA
+          const pesan = `Halo, saya ingin mendaftar dengan data berikut:%0A- Nama: ${encodeURIComponent(nama)}%0A- Email: ${encodeURIComponent(email)}%0A- No Hp: ${encodeURIComponent(phone)}%0A- Kategori: ${encodeURIComponent(kategori)}`;
+
+          // Nomor tujuan WhatsApp (contoh menggunakan nomor Indonesia, tanpa tanda + atau spasi)
+          const nomorWA = '62895639068080';
+
+          // WhatsApp URL format
+          const whatsappURL = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+
+          // Open WhatsApp link in new tab/window
+          window.open(whatsappURL, '_blank');
+        }
+      </script>
     </main>
 
     <footer id="footer" class="footer position-relative light-background">
