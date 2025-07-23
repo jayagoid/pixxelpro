@@ -262,7 +262,7 @@ ${pertanyaan}`;
             <div class="col-lg-10">
                 <div class="faq-container">
 
-                    <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
                         <div class="faq-question">
                             <i class="faq-icon bi bi-question-circle"></i>
                             <h3>Non consectetur a erat nam at lectus urna duis?</h3>
@@ -302,9 +302,8 @@ ${pertanyaan}`;
             </div>
         </div>
     </div>
-    </section>
 
-    <style>
+</section><style>
     /* FAQ Section General Styling */
     .faq-2 .faq-container {
         max-width: 900px;
@@ -337,6 +336,7 @@ ${pertanyaan}`;
         margin: 0;
         font-size: 18px;
         color: #333;
+        transition: color 0.3s ease-in-out;
     }
 
     .faq-2 .faq-icon {
@@ -357,11 +357,12 @@ ${pertanyaan}`;
     .faq-2 .faq-content {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        transition: max-height 0.35s ease-out, padding 0.35s ease-out;
         padding: 0 25px;
     }
 
     .faq-2 .faq-content p {
+        padding-top: 10px;
         margin-bottom: 20px;
         color: #555;
         line-height: 1.6;
@@ -378,7 +379,7 @@ ${pertanyaan}`;
 
     .faq-2 .faq-item.faq-active .faq-content {
         max-height: 500px; /* Atur tinggi maksimal yang cukup untuk konten */
-        padding: 20px 25px;
+        padding-bottom: 5px;
     }
 
     .faq-2 .faq-item.faq-active .faq-toggle {
@@ -386,9 +387,37 @@ ${pertanyaan}`;
     }
 </style>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Cari semua elemen pertanyaan yang bisa diklik
+    const faqQuestions = document.querySelectorAll('.faq-2 .faq-question');
 
-     
-
+    faqQuestions.forEach(question => {
+        // Untuk setiap pertanyaan, tambahkan 'event listener' untuk klik
+        question.addEventListener('click', () => {
+            // Dapatkan elemen .faq-item terdekat dari pertanyaan yang diklik
+            const currentItem = question.closest('.faq-item');
+            
+            // Cek apakah item yang diklik saat ini sudah terbuka
+            const isAlreadyActive = currentItem.classList.contains('faq-active');
+            
+            // --- Logika Accordion: Tutup semua item yang lain ---
+            document.querySelectorAll('.faq-2 .faq-item.faq-active').forEach(activeItem => {
+                // Hapus kelas 'faq-active' dari semua item yang sedang aktif
+                activeItem.classList.remove('faq-active');
+            });
+            
+            // --- Buka item yang diklik (jika sebelumnya tertutup) ---
+            if (!isAlreadyActive) {
+                // Jika item yang diklik tadi belum aktif, tambahkan kelas 'faq-active' untuk membukanya
+                currentItem.classList.add('faq-active');
+            }
+            // Jika item yang diklik sudah aktif, logika di atas sudah menutupnya,
+            // sehingga efeknya adalah item tersebut akan tertutup.
+        });
+    });
+});
+</script>
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
