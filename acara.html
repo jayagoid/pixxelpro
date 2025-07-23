@@ -123,7 +123,11 @@
               <!-- Events List -->
               <div class="events-list filter-website isotope-item">
                 <!-- Event Item 1 -->
-                <div class="event-item" data-aos="fade-up">
+                <div
+                  class="event-item"
+                  data-category="website"
+                  data-aos="fade-up"
+                >
                   <div class="event-date">
                     <span class="day">28</span>
                     <span class="month">Juli</span>
@@ -154,6 +158,7 @@
                 <div
                   class="event-item filter-website isotope-item"
                   data-aos="fade-up"
+                  data-category="website"
                   data-aos-delay="100"
                 >
                   <div class="event-date">
@@ -187,6 +192,7 @@
                 <!-- Event Item 3 -->
                 <div
                   class="event-item filter-website isotope-item"
+                  data-category="website"
                   data-aos="fade-up"
                   data-aos-delay="200"
                 >
@@ -257,6 +263,7 @@
                         type="text"
                         class="form-control"
                         placeholder="Search Events..."
+                        id="search"
                       />
                       <button class="btn" type="submit">
                         <i class="bi bi-search"></i>
@@ -271,14 +278,17 @@
                   class="sidebar-item categories"
                   data-aos="fade-up"
                   data-aos-delay="100"
+                  id="categories"
                 >
                   <h4>Event Categories</h4>
                   <ul class="list-unstyled">
-                    <li><a data-filter="*" class="filter-active"></a>All</li>
-                    <li><a data-filter=".filter-website"></a>Website</li>
-                    <li>
-                      <a data-filter=".filter-digital"></a> Digital Marketing
+                    <li data-filter="*" class="filter-active">
+                      <button data-category="all">All</button>
                     </li>
+                    <li data-filter=".filter-website">
+                      <button data-category="website">Website</button>
+                    </li>
+                    <li data-filter=".filter-digital">Digital Marketing</li>
                     <li data-filter=".filter-jurnalistik">Jurnalistik</li>
                   </ul>
                 </div>
@@ -290,6 +300,42 @@
         </div>
       </section>
       <!-- /Events Extended Section -->
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const searchInput = document.getElementById("search");
+          const eventList = document.querySelectorAll(".event");
+          const categoryButtons =
+            document.querySelectorAll("#categories button");
+
+          // Fungsi pencarian
+          searchInput.addEventListener("input", () => {
+            const query = searchInput.value.toLowerCase();
+            eventList.forEach((event) => {
+              const title = event.querySelector("h2").textContent.toLowerCase();
+              event.style.display = title.includes(query) ? "" : "none";
+            });
+          });
+
+          // Fungsi kategori
+          categoryButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+              const category = button.getAttribute("data-category");
+              eventList.forEach((event) => {
+                if (
+                  category === "all" ||
+                  event.getAttribute("data-category") === category
+                ) {
+                  event.style.display = "";
+                } else {
+                  event.style.display = "none";
+                }
+              });
+              searchInput.value = ""; // Reset pencarian
+            });
+          });
+        });
+      </script>
     </main>
 
     <footer id="footer" class="footer position-relative light-background">
