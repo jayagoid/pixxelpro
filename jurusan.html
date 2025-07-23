@@ -8,24 +8,39 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Definisi animasi pergerakan */
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        /* Bergerak sejauh setengah dari total lebar (lebar 1 set logo) */
+        /* Rumus: calc(-[lebar per logo]px * [jumlah logo asli]) */
+        transform: translateX(calc(-200px * 7));
+      }
+    }
+
+    /* Menghentikan animasi saat kursor diarahkan ke slider */
+    .logo-slider:hover .logo-track {
+      animation-play-state: paused;
+    }
+  </style>
 
 </head>
 
@@ -35,8 +50,6 @@
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
         <img src="assets/img/logo.webp" alt="">
         <h1 class="sitename">PixxelPro</h1>
       </a>
@@ -53,7 +66,6 @@
               <li><a href="fasilitas.html">Fasilitas</a></li>
             </ul>
           </li>
-
           <li><a href="galeri.html">Galeri</a></li>
           <li><a href="berita.html">Berita</a></li>
           <li><a href="acara.html">Acara</a></li>
@@ -80,7 +92,6 @@
 
   <main class="main">
 
-    <!-- Page Title -->
     <div class="page-title light-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
         <h1 class="mb-2 mb-lg-0">Jurusan</h1>
@@ -91,10 +102,7 @@
           </ol>
         </nav>
       </div>
-    </div><!-- End Page Title -->
-
-    <!-- Academics Section -->
-    <section id="academics" class="academics section">
+    </div><section id="academics" class="academics section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -104,8 +112,8 @@
               <h3 class="section-heading">Temukan pengalaman berharga dan keberhasilan kamu bersama PixxelPro Digital</h3>
               <p class="lead">Kami menyediakan Jasa Digital Marketing, Paket Optimasi UMKM, Program Internship atau Magang SMK dan Mahasiswa, Jasa Pembuatan Website Profesional.Training Digital Marketing untuk Guru SMK, Pelatihan Bisnis Digital UMKM dan Sekolah.</p>
               <div class="cta-buttons mt-4">
-                   <a href="tentang.html" class="btn btn-primary me-3">Jelajahi Program</a>
-                   <a href="pendaftaran.html" class="btn btn-outline">Pendaftaran</a>
+                <a href="tentang.html" class="btn btn-primary me-3">Jelajahi Program</a>
+                <a href="pendaftaran.html" class="btn btn-outline">Pendaftaran</a>
               </div>
             </div>
           </div>
@@ -152,182 +160,128 @@
               <li data-filter=".filter-graduate">Universitas</li>
             </ul>
 
-           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-    <div class="col-lg-4 col-md-6 program-item isotope-item filter-undergraduate">
-        <div class="program-card">
-            <div class="program-img">
-                <img src="assets/img/education/education-1.webp" alt="Teknik Komputer dan Jaringan" class="img-fluid">
-                <div class="program-tag">SMK</div>
-            </div>
-            <div class="program-content">
-                <h4>TKJ</h4>
-                <p>Jurusan Teknik Komputer dan Jaringan</p>
-            </div>
+              <div class="col-lg-4 col-md-6 program-item isotope-item filter-undergraduate">
+                <div class="program-card">
+                  <div class="program-img">
+                    <img src="assets/img/education/education-1.webp" alt="Teknik Komputer dan Jaringan" class="img-fluid">
+                    <div class="program-tag">SMK</div>
+                  </div>
+                  <div class="program-content">
+                    <h4>TKJ</h4>
+                    <p>Jurusan Teknik Komputer dan Jaringan</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 program-item isotope-item filter-undergraduate">
+                <div class="program-card">
+                  <div class="program-img">
+                    <img src="assets/img/education/education-1.webp" alt="Bisnis Digital" class="img-fluid">
+                    <div class="program-tag">SMK</div>
+                  </div>
+                  <div class="program-content">
+                    <h4>Bisnis Digital</h4>
+                    <p>Jurusan Bisnis Digital</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 program-item isotope-item filter-undergraduate">
+                <div class="program-card">
+                  <div class="program-img">
+                    <img src="assets/img/education/education-1.webp" alt="Rekayasa Perangkat Lunak" class="img-fluid">
+                    <div class="program-tag">SMK</div>
+                  </div>
+                  <div class="program-content">
+                    <h4>RPL</h4>
+                    <p>Jurusan Rekayasa Perangkat Lunak</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 program-item isotope-item filter-graduate">
+                <div class="program-card">
+                  <div class="program-img">
+                    <img src="assets/img/education/education-5.webp" alt="Teknik Informatika" class="img-fluid">
+                    <div class="program-tag">Universitas</div>
+                  </div>
+                  <div class="program-content">
+                    <h4>TI</h4>
+                    <p>Program Studi Teknik Informatika</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 program-item isotope-item filter-graduate">
+                <div class="program-card">
+                  <div class="program-img">
+                    <img src="assets/img/education/education-7.webp" alt="Pendidikan Teknik Informatika" class="img-fluid">
+                    <div class="program-tag">Universitas</div>
+                  </div>
+                  <div class="program-content">
+                    <h4>PTI</h4>
+                    <p>Pendidikan Teknik Informatika</p>
+                  </div>
+                </div>
+              </div>
+
+            </div></div></div></div></section><section id="partner" class="partner section light-background">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header text-center mb-5">
+          <h3>Partner Kami</h3>
+          <p>Berikut Instansi yang sudah bergabung dengan PixxelPro Digital</p>
         </div>
-    </div>
 
-    <div class="col-lg-4 col-md-6 program-item isotope-item filter-undergraduate">
-        <div class="program-card">
-            <div class="program-img">
-                <img src="assets/img/education/education-1.webp" alt="Bisnis Digital" class="img-fluid">
-                <div class="program-tag">SMK</div>
+        <div id="logoSlider" class="logo-slider" style="background: white; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); height: 100px; margin: auto; overflow: hidden; position: relative; width: 90%; max-width: 1200px;">
+          <div class="logo-track" style="animation: scroll 35s linear infinite; display: flex; width: calc(200px * 14);">
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=google&color=black" alt="Google" style="height: 60px; vertical-align: middle; max-width: 100%;">
             </div>
-            <div class="program-content">
-                <h4>Bisnis Digital</h4>
-                <p>Jurusan Bisnis Digital</p>
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=microsoft" alt="Microsoft" style="height: 60px; vertical-align: middle; max-width: 100%;">
             </div>
-        </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 program-item isotope-item filter-undergraduate">
-        <div class="program-card">
-            <div class="program-img">
-                <img src="assets/img/education/education-1.webp" alt="Rekayasa Perangkat Lunak" class="img-fluid">
-                <div class="program-tag">SMK</div>
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=amazon-icon" alt="Amazon" style="height: 60px; vertical-align: middle; max-width: 100%;">
             </div>
-            <div class="program-content">
-                <h4>RPL</h4>
-                <p>Jurusan Rekayasa Perangkat Lunak</p>
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=facebook" alt="Facebook" style="height: 60px; vertical-align: middle; max-width: 100%;">
             </div>
-        </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 program-item isotope-item filter-graduate">
-        <div class="program-card">
-            <div class="program-img">
-                <img src="assets/img/education/education-5.webp" alt="Teknik Informatika" class="img-fluid">
-                <div class="program-tag">Universitas</div>
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=apple" alt="Apple" style="height: 60px; vertical-align: middle; max-width: 100%;">
             </div>
-            <div class="program-content">
-                <h4>TI</h4>
-                <p>Program Studi Teknik Informatika</p>
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=netflix-icon" alt="Netflix" style="height: 60px; vertical-align: middle; max-width: 100%;">
             </div>
-        </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 program-item isotope-item filter-graduate">
-        <div class="program-card">
-            <div class="program-img">
-                <img src="assets/img/education/education-7.webp" alt="Pendidikan Teknik Informatika" class="img-fluid">
-                <div class="program-tag">Universitas</div>
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=spotify-icon" alt="Spotify" style="height: 60px; vertical-align: middle; max-width: 100%;">
             </div>
-            <div class="program-content">
-                <h4>PTI</h4>
-                <p>Pendidikan Teknik Informatika</p>
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=google&color=black" alt="Google" style="height: 60px; vertical-align: middle; max-width: 100%;">
             </div>
-        </div>
-    </div>
-
-</div> 
-  
- <style>
-        body {
-            font-family: sans-serif;
-            background-color: #f0f0f0;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-
-        /* Definisi animasi pergerakan */
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                /* Bergerak sejauh setengah dari total lebar (lebar 1 set logo) */
-                /* Rumus: calc(-[lebar per logo]px * [jumlah logo asli]) */
-                transform: translateX(calc(-200px * 7));
-            }
-        }
-
-        /* Menghentikan animasi saat kursor diarahkan ke slider */
-        .logo-slider:hover .logo-track {
-            animation-play-state: paused;
-        }
-    </style>
-
-    <div class="programs-section mb-5">
-          <div class="section-header text-center mb-5" data-aos="fade-up" data-aos-delay="200">
-            <h3>Partner Kami</h3>
-            <p>Berikut Instansi yang sudah bergabung dengan PixxelPro Digital</p>
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=microsoft" alt="Microsoft" style="height: 60px; vertical-align: middle; max-width: 100%;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=amazon-icon" alt="Amazon" style="height: 60px; vertical-align: middle; max-width: 100%;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=facebook" alt="Facebook" style="height: 60px; vertical-align: middle; max-width: 100%;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=apple" alt="Apple" style="height: 60px; vertical-align: middle; max-width: 100%;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=netflix-icon" alt="Netflix" style="height: 60px; vertical-align: middle; max-width: 100%;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px; box-sizing: border-box;">
+              <img src="https://s2.svgbox.net/logos.svg?i=spotify-icon" alt="Spotify" style="height: 60px; vertical-align: middle; max-width: 100%;">
+            </div>
           </div>
-      
-    <div id="logoSlider" class="logo-slider" style="
-        background: white;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        height: 100px;
-        margin: auto;
-        overflow: hidden; /* Menyembunyikan logo yang keluar dari area */
-        position: relative;
-        width: 90%;
-        max-width: 1200px;
-    ">
-        <div class="logo-track" style="
-            animation: scroll 35s linear infinite; /* Atur kecepatan di sini (35s) */
-            display: flex;
-            /* Lebar total: (lebar per logo) x (jumlah total logo) */
-            /* Contoh: 200px x 14 logo = 2800px */
-            width: calc(200px * 14);
-        ">
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=google&color=black" alt="Google" style="height: 60px; vertical-align: middle;">
-            </div>
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=microsoft" alt="Microsoft" style="height: 60px; vertical-align: middle;">
-            </div>
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=amazon-icon" alt="Amazon" style="height: 60px; vertical-align: middle;">
-            </div>
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=facebook" alt="Facebook" style="height: 60px; vertical-align: middle;">
-            </div>
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=apple" alt="Apple" style="height: 60px; vertical-align: middle;">
-            </div>
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=netflix-icon" alt="Netflix" style="height: 60px; vertical-align: middle;">
-            </div>
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=spotify-icon" alt="Spotify" style="height: 60px; vertical-align: middle;">
-            </div>
-
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=google&color=black" alt="Google" style="height: 60px; vertical-align: middle;">
-            </div>
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=microsoft" alt="Microsoft" style="height: 60px; vertical-align: middle;">
-            </div>
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=amazon-icon" alt="Amazon" style="height: 60px; vertical-align: middle;">
-            </div>
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=facebook" alt="Facebook" style="height: 60px; vertical-align: middle;">
-            </div>
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=apple" alt="Apple" style="height: 60px; vertical-align: middle;">
-            </div>
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=netflix-icon" alt="Netflix" style="height: 60px; vertical-align: middle;">
-            </div>
-            <div style="width: 200px; text-align: center; padding: 20px;">
-                <img src="https://s2.svgbox.net/logos.svg?i=spotify-icon" alt="Spotify" style="height: 60px; vertical-align: middle;">
-            </div>
         </div>
-    </div>
-    
-    <script>
-        // Kode ini hanya sebagai contoh JavaScript inline.
-        // Fungsionalitas utama (animasi & jeda saat hover) sudah dikerjakan oleh CSS di atas.
-        const slider = document.getElementById('logoSlider');
-        console.log('Logo slider berhasil dimuat. Arahkan kursor untuk menjeda animasi.');
-        
-        // Contoh event listener sederhana
-        slider.addEventListener('click', () => {
-            console.log('Anda mengklik slider!');
-        });
-    </script>
-  
+      </div>
+    </section></main>
 
   <footer id="footer" class="footer position-relative light-background">
 
@@ -400,18 +354,14 @@
 
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
-
     </div>
 
   </footer>
 
-  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -421,7 +371,6 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
