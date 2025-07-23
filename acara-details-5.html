@@ -446,11 +446,18 @@
 
           // Construct WhatsApp message text
           let whatsappText =
-            `Halo, saya ingin mendaftar dengan data berikut:%0A` +
-            `Nama: ${name}%0A` +
-            `Email: ${email}%0A` +
-            `No Hp: ${phone}%0A` +
-            `Kategori: ${kategori}`;
+            "Halo, saya ingin mendaftar untuk Pelatihan Jurnalistik %0A" +
+            "Nama: " +
+            encodeURIComponent(name) +
+            "%0A" +
+            "Email: " +
+            encodeURIComponent(email) +
+            "%0A" +
+            "No Telpon: " +
+            encodeURIComponent(phone) +
+            "%0A" +
+            "Kategori: " +
+            encodeURIComponent(kategori);
 
           // WhatsApp number placeholder (replace with your target phone number including country code)
           const phoneNumber = "62895639068080";
