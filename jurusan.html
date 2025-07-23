@@ -221,121 +221,110 @@
 
 </div> 
   
-   <div class="faculty-section mb-5">
-    <div class="container">
+ <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
 
-        <div class="section-header text-center mb-5" data-aos="fade-up" data-aos-delay="200">
-            <h3>Mitra PixxelPro Digital</h3>
-            <p>Belajar, Berkembang, Bertumbuh</p>
-        </div>
-
-        <div class="swiper faculty-swiper" data-aos="fade-up" data-aos-delay="300">
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide">
-                    <div class="faculty-card">
-                        <div class="faculty-img">
-                            <img src="assets/img/person/person-m-3.webp" alt="Dr. Michael Reynolds" class="img-fluid">
-                        </div>
-                        <div class="faculty-content">
-                            <h4>Dr. Michael Reynolds</h4>
-                            <p class="faculty-position">Computer Science</p>
-                            <div class="faculty-social">
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-envelope"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="swiper-slide">
-                    <div class="faculty-card">
-                        <div class="faculty-img">
-                            <img src="assets/img/person/person-f-5.webp" alt="Dr. Sarah Johnson" class="img-fluid">
-                        </div>
-                        <div class="faculty-content">
-                            <h4>Dr. Sarah Johnson</h4>
-                            <p class="faculty-position">Psychology</p>
-                            <div class="faculty-social">
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-envelope"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="swiper-slide">
-                    <div class="faculty-card">
-                        <div class="faculty-img">
-                            <img src="assets/img/person/person-m-7.webp" alt="Dr. Robert Chen" class="img-fluid">
-                        </div>
-                        <div class="faculty-content">
-                            <h4>Dr. Robert Chen</h4>
-                            <p class="faculty-position">Business Administration</p>
-                            <div class="faculty-social">
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-envelope"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="swiper-slide">
-                    <div class="faculty-card">
-                        <div class="faculty-img">
-                            <img src="assets/img/person/person-f-9.webp" alt="Dr. Emily Davis" class="img-fluid">
-                        </div>
-                        <div class="faculty-content">
-                            <h4>Dr. Emily Davis</h4>
-                            <p class="faculty-position">Education</p>
-                            <div class="faculty-social">
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-envelope"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div></div>
-            <div class="swiper-pagination"></div>
-        </div></div>
-</div>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    new Swiper('.faculty-swiper', {
-        // Mengatur kecepatan slider
-        speed: 600,
-        // Membuat slider berputar terus menerus (loop)
-        loop: true,
-        // Mengaktifkan autoplay
-        autoplay: {
-            delay: 3000, // Jeda 3 detik sebelum pindah ke slide berikutnya
-            disableOnInteraction: false // Autoplay tidak berhenti setelah interaksi user
-        },
-        // Jumlah slide yang terlihat
-        slidesPerView: 'auto',
-        // Opsi untuk pagination
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            clickable: true
-        },
-        // Pengaturan responsif untuk jumlah slide di berbagai ukuran layar
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 30
-            },
-            1200: {
-                slidesPerView: 4,
-                spaceBetween: 30
+        /* Definisi animasi pergerakan */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                /* Bergerak sejauh setengah dari total lebar (lebar 1 set logo) */
+                /* Rumus: calc(-[lebar per logo]px * [jumlah logo asli]) */
+                transform: translateX(calc(-200px * 7));
             }
         }
-    });
-});
-</script>
-          </div>
 
+        /* Menghentikan animasi saat kursor diarahkan ke slider */
+        .logo-slider:hover .logo-track {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center; margin-bottom: 30px;">Partner Kami</h2>
+
+    <div id="logoSlider" class="logo-slider" style="
+        background: white;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        height: 100px;
+        margin: auto;
+        overflow: hidden; /* Menyembunyikan logo yang keluar dari area */
+        position: relative;
+        width: 90%;
+        max-width: 1200px;
+    ">
+        <div class="logo-track" style="
+            animation: scroll 35s linear infinite; /* Atur kecepatan di sini (35s) */
+            display: flex;
+            /* Lebar total: (lebar per logo) x (jumlah total logo) */
+            /* Contoh: 200px x 14 logo = 2800px */
+            width: calc(200px * 14);
+        ">
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=google&color=black" alt="Google" style="height: 60px; vertical-align: middle;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=microsoft" alt="Microsoft" style="height: 60px; vertical-align: middle;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=amazon-icon" alt="Amazon" style="height: 60px; vertical-align: middle;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=facebook" alt="Facebook" style="height: 60px; vertical-align: middle;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=apple" alt="Apple" style="height: 60px; vertical-align: middle;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=netflix-icon" alt="Netflix" style="height: 60px; vertical-align: middle;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=spotify-icon" alt="Spotify" style="height: 60px; vertical-align: middle;">
+            </div>
+
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=google&color=black" alt="Google" style="height: 60px; vertical-align: middle;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=microsoft" alt="Microsoft" style="height: 60px; vertical-align: middle;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=amazon-icon" alt="Amazon" style="height: 60px; vertical-align: middle;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=facebook" alt="Facebook" style="height: 60px; vertical-align: middle;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=apple" alt="Apple" style="height: 60px; vertical-align: middle;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=netflix-icon" alt="Netflix" style="height: 60px; vertical-align: middle;">
+            </div>
+            <div style="width: 200px; text-align: center; padding: 20px;">
+                <img src="https://s2.svgbox.net/logos.svg?i=spotify-icon" alt="Spotify" style="height: 60px; vertical-align: middle;">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Kode ini hanya sebagai contoh JavaScript inline.
+        // Fungsionalitas utama (animasi & jeda saat hover) sudah dikerjakan oleh CSS di atas.
+        const slider = document.getElementById('logoSlider');
+        console.log('Logo slider berhasil dimuat. Arahkan kursor untuk menjeda animasi.');
+        
+        // Contoh event listener sederhana
+        slider.addEventListener('click', () => {
+            console.log('Anda mengklik slider!');
+        });
+    </script>
   
 
   <footer id="footer" class="footer position-relative light-background">
