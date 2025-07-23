@@ -261,6 +261,7 @@
                   <div class="input-group">
                     <input
                       type="text"
+                      class="form-control"
                       placeholder="Search Events..."
                       id="search"
                     />
@@ -308,8 +309,7 @@
           searchInput.addEventListener("input", () => {
             const query = searchInput.value.toLowerCase();
             eventList.forEach((event) => {
-              const title =
-                event - item.querySelector("h3").textContent.toLowerCase();
+              const title = event.querySelector("h3").textContent.toLowerCase();
               event.style.display = title.includes(query) ? "" : "none";
             });
           });
