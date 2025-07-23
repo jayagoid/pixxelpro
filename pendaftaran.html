@@ -192,44 +192,63 @@
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="contact-form-card">
-              <h3 class="section-subtitle">Tanya Seputar Magang</h3>
-              <form action="forms/contact.php" class="php-email-form">
-                <div class="row g-3">
-                  <div class="col-12">
-                    <input type="text" name="name" class="form-control" placeholder="Name*" required="">
-                  </div>
-                  <div class="col-md-6">
-                    <input type="email" name="email" class="form-control" placeholder="Email Address*" required="">
-                  </div>
-                  <div class="col-md-6">
-                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number">
-                  </div>
-                  <div class="col-12">
-                    <select name="subject" class="form-select" required="">
-                      <option selected="" disabled="">Program of Interest*</option>
-                      <option>Undergraduate</option>
-                      <option>Graduate</option>
-                      <option>Doctoral</option>
-                      <option>Certificate</option>
-                      <option>Non-Degree</option>
-                    </select>
-                  </div>
-                  <div class="col-12">
-                    <textarea name="message" class="form-control" rows="7" placeholder="Questions or Comments"></textarea>
-                  </div>
-                  <div class="col-12">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                    <button type="submit" class="btn btn-request">Request Information</button>
-                  </div>
+         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+    <div class="contact-form-card">
+        <h3 class="section-subtitle">Tanya Seputar Magang</h3>
+        <form id="whatsapp-form">
+            <div class="row g-3">
+                <div class="col-12">
+                    <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Lengkap*" required="">
                 </div>
-              </form>
+
+                <div class="col-12">
+                    <select id="pendidikan" name="pendidikan" class="form-select" required="">
+                        <option value="" selected disabled>Pilih Pendidikan*</option>
+                        <option value="SMK">SMK</option>
+                        <option value="Mahasiswa">Mahasiswa</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <textarea id="pertanyaan" name="pertanyaan" class="form-control" rows="6" placeholder="Tulis pertanyaan Anda di sini...*" required=""></textarea>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-request">Kirim via WhatsApp</button>
+                </div>
             </div>
-          </div>
-        </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('whatsapp-form').addEventListener('submit', function(event) {
+        // Mencegah form dari pengiriman standar
+        event.preventDefault();
+
+        // Nomor WhatsApp tujuan (gunakan format internasional tanpa spasi atau tanda hubung)
+        const nomorWA = '6289563906808';
+
+        // Ambil data dari setiap kolom form
+        const nama = document.getElementById('nama').value;
+        const pendidikan = document.getElementById('pendidikan').value;
+        const pertanyaan = document.getElementById('pertanyaan').value;
+
+        // Buat format pesan yang akan dikirim
+        // %0A digunakan untuk membuat baris baru di URL
+        const pesanTeks = `Halo, saya ingin bertanya seputar magang.%0A
+%0A*Nama:* ${nama}
+*Pendidikan:* ${pendidikan}
+*Pertanyaan:*
+${pertanyaan}`;
+
+        // Buat URL lengkap untuk WhatsApp
+        const waUrl = `https://api.whatsapp.com/send?phone=${nomorWA}&text=${pesanTeks}`;
+
+        // Buka URL WhatsApp di tab baru
+        window.open(waUrl, '_blank');
+    });
+</script>
 
 
         <div class="row mt-5 campus-visit">
