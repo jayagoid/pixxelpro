@@ -328,7 +328,7 @@
                         type="text"
                         class="form-control"
                         id="name"
-                        name="nama"
+                        name="name"
                         required=""
                       />
                     </div>
@@ -446,10 +446,11 @@
 
           // Construct WhatsApp message text
           let whatsappText =
-            `*Name:* ${name}%0A` +
-            `*Email:* ${email}%0A` +
-            `*phone:* ${phone}%0A` +
-            `*kategori:* ${kategori}`;
+            `Halo, saya ingin mendaftar dengan data berikut:%0A` +
+            `Nama: ${name}%0A` +
+            `Email: ${email}%0A` +
+            `No Hp: ${phone}%0A` +
+            `Kategori: ${kategori}`;
 
           // WhatsApp number placeholder (replace with your target phone number including country code)
           const phoneNumber = "62895639068080";
