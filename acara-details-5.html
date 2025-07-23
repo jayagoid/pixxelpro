@@ -315,7 +315,11 @@
                   data-aos-delay="200"
                 >
                   <h3>Pendaftaran</h3>
-                  <form id="pendaftaranForm">
+                  <form
+                    id="whatsappForm"
+                    onsubmit="sendWhatsAppMessage(event)"
+                    novalidate
+                  >
                     <div class="mb-3">
                       <label for="name" class="form-label">Nama:</label>
                       <input
@@ -420,39 +424,38 @@
       <!-- /Event Section -->
 
       <script>
-        document.getElementById("pendaftaranForm").addEventListener("submit"),
-          function (event) {
-            event.preventDefault();
-            const nama = document.getElementById("nama").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const phone = document.getElementById("phone").value.trim();
-            const kategori = document.getElementById("kategori").value;
+        function sendWhatsAppMessage(event) {
+          event.preventDefault();
 
-            if (!nama || !email || !phone || !kategori) {
-              alert("Mohon lengkapi semua data");
-              return;
-            }
+          // Collect form data
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const kategori = document.getElementById("kategori").value.trim();
 
-            // Format pesan yang akan dikirim ke WA
-            const pesan = `Halo, saya ingin mendaftar dengan data berikut:%0A- Nama: ${encodeURIComponent(
-              nama
-            )}%0A- Email: ${encodeURIComponent(
-              email
-            )}%0A- No Hp: ${encodeURIComponent(
-              phone
-            )}%0A- Kategori: ${encodeURIComponent(kategori)}`;
+          if (!name || !email || !phone || !kategori) {
+            alert("Please fill in all fields before sending.");
+            return;
+          }
 
-            // Nomor tujuan WhatsApp (contoh menggunakan nomor Indonesia, tanpa tanda + atau spasi)
-            const nomorWA = "62895639068080";
+          // Construct WhatsApp message text
+          let whatsappText =
+            `*Name:* ${name}%0A` +
+            `*Email:* ${email}%0A` +
+            `*phone:* ${phone}%0A` +
+            `*kategori:* ${kategori}`;
 
-            // WhatsApp URL format
-            const whatsappURL = `https://wa.me/${nomorWA}?text=${encodeURIComponent(
-              pesan
-            )}`;
+          // WhatsApp number placeholder (replace with your target phone number including country code)
+          const phoneNumber = "62895639068080";
 
-            // Open WhatsApp link in new tab/window
-            window.open(whatsappURL, "_blank");
-          };
+          // WhatsApp URL format
+          const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+            whatsappText
+          )}`;
+
+          // Open WhatsApp link in new tab/window
+          window.open(whatsappURL, "_blank");
+        }
       </script>
     </main>
 
