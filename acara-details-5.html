@@ -409,34 +409,7 @@
                 >
                   <h3>Acara Terkait</h3>
                   <div class="related-event-item">
-                    <div class="related-event-date">
-                      <span class="day">15</span>
-                      <span class="month">Nov</span>
-                    </div>
-                    <div class="related-event-info">
-                      <h4>Mathematics Olympiad</h4>
-                      <p><i class="bi bi-geo-alt"></i> Room 203, East Wing</p>
-                    </div>
-                  </div>
-                  <div class="related-event-item">
-                    <div class="related-event-date">
-                      <span class="day">05</span>
-                      <span class="month">Dec</span>
-                    </div>
-                    <div class="related-event-info">
-                      <h4>Literature Festival</h4>
-                      <p><i class="bi bi-geo-alt"></i> Central Library</p>
-                    </div>
-                  </div>
-                  <div class="related-event-item">
-                    <div class="related-event-date">
-                      <span class="day">18</span>
-                      <span class="month">Dec</span>
-                    </div>
-                    <div class="related-event-info">
-                      <h4>Annual Sports Meet</h4>
-                      <p><i class="bi bi-geo-alt"></i> School Ground</p>
-                    </div>
+                    <p>Tidak Ada</p>
                   </div>
                 </div>
               </div>
@@ -447,30 +420,39 @@
       <!-- /Event Section -->
 
       <script>
-        document.getElementById('pendaftaranForm').addEventListener('submit', function(event) {
-          event.preventDefault();
-          const nama = document.getElementById('nama').value.trim();
-          const email = document.getElementById('email').value.trim();
-          const phone = document.getElementById('phone').value.trim();
-          const kategori = document.getElementById('kategori').value;
+        document.getElementById("pendaftaranForm").addEventListener("submit"),
+          function (event) {
+            event.preventDefault();
+            const nama = document.getElementById("nama").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const kategori = document.getElementById("kategori").value;
 
-          if (!nama || !email || !phone || !kategori) {
-            alert('Mohon lengkapi semua data');
-            return;
-          }
+            if (!nama || !email || !phone || !kategori) {
+              alert("Mohon lengkapi semua data");
+              return;
+            }
 
-          // Format pesan yang akan dikirim ke WA
-          const pesan = `Halo, saya ingin mendaftar dengan data berikut:%0A- Nama: ${encodeURIComponent(nama)}%0A- Email: ${encodeURIComponent(email)}%0A- No Hp: ${encodeURIComponent(phone)}%0A- Kategori: ${encodeURIComponent(kategori)}`;
+            // Format pesan yang akan dikirim ke WA
+            const pesan = `Halo, saya ingin mendaftar dengan data berikut:%0A- Nama: ${encodeURIComponent(
+              nama
+            )}%0A- Email: ${encodeURIComponent(
+              email
+            )}%0A- No Hp: ${encodeURIComponent(
+              phone
+            )}%0A- Kategori: ${encodeURIComponent(kategori)}`;
 
-          // Nomor tujuan WhatsApp (contoh menggunakan nomor Indonesia, tanpa tanda + atau spasi)
-          const nomorWA = '62895639068080';
+            // Nomor tujuan WhatsApp (contoh menggunakan nomor Indonesia, tanpa tanda + atau spasi)
+            const nomorWA = "62895639068080";
 
-          // WhatsApp URL format
-          const whatsappURL = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+            // WhatsApp URL format
+            const whatsappURL = `https://wa.me/${nomorWA}?text=${encodeURIComponent(
+              pesan
+            )}`;
 
-          // Open WhatsApp link in new tab/window
-          window.open(whatsappURL, '_blank');
-        }
+            // Open WhatsApp link in new tab/window
+            window.open(whatsappURL, "_blank");
+          };
       </script>
     </main>
 
