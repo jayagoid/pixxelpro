@@ -123,11 +123,7 @@
               <!-- Events List -->
               <div class="events-list">
                 <!-- Event Item 1 -->
-                <div
-                  class="event-item"
-                  data-category="website"
-                  data-aos="fade-up"
-                >
+                <div class="event" data-category="website" data-aos="fade-up">
                   <div class="event-date">
                     <span class="day">28</span>
                     <span class="month">Juli</span>
@@ -156,7 +152,7 @@
 
                 <!-- Event Item 2 -->
                 <div
-                  class="event-item"
+                  class="event"
                   data-aos="fade-up"
                   data-category="website"
                   data-aos-delay="100"
@@ -191,7 +187,7 @@
 
                 <!-- Event Item 3 -->
                 <div
-                  class="event-item"
+                  class="event"
                   data-category="digital"
                   data-aos="fade-up"
                   data-aos-delay="200"
@@ -305,7 +301,7 @@
       <script>
         document.addEventListener("DOMContentLoaded", () => {
           const searchInput = document.getElementById("search");
-          const eventList = document.querySelectorAll(".event-item");
+          const eventList = document.querySelectorAll(".event");
           const categoryButtons =
             document.querySelectorAll("#categories button");
 
