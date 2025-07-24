@@ -518,8 +518,107 @@
 
   </div>
 </div>
-        </div>
-      </div>
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    
+        // --- Data & Pengaturan Awal ---
+        const allItems = Array.from({ length: 53 }, (_, i) => `Ini adalah item nomor ${i + 1}`); // Membuat 53 item data contoh
+        const itemsPerPage = 10; // Tampilkan 10 item per halaman
+        const totalPages = Math.ceil(allItems.length / itemsPerPage);
+        let currentPage = 1;
+
+        // --- Elemen DOM ---
+        const itemListContainer = document.getElementById('item-list');
+        const paginationWrapper = document.getElementById('pagination-wrapper');
+
+        /**
+         * Fungsi untuk menampilkan item sesuai halaman yang aktif.
+         */
+        function displayItems() {
+            // Kosongkan daftar item sebelumnya
+            itemListContainer.innerHTML = '';
+            
+            // Tentukan item mana yang harus ditampilkan
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const itemsToShow = allItems.slice(startIndex, endIndex);
+
+            // Tampilkan item ke dalam container
+            itemsToShow.forEach(itemText => {
+                const itemElement = document.createElement('a');
+                itemElement.href = '#';
+                itemElement.className = 'list-group-item list-group-item-action';
+                itemElement.textContent = itemText;
+                itemListContainer.appendChild(itemElement);
+            });
+        }
+
+        /**
+         * Fungsi untuk membuat atau memperbarui tombol-tombol paginasi.
+         */
+        function setupPagination() {
+            // Kosongkan tombol paginasi sebelumnya
+            paginationWrapper.innerHTML = '';
+
+            // --- Tombol "Sebelumnya" (Previous) ---
+            const prevLi = document.createElement('li');
+            prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+            prevLi.innerHTML = `<a class="page-link" href="#" data-page="prev"><i class="bi bi-chevron-left"></i></a>`;
+            paginationWrapper.appendChild(prevLi);
+
+            // --- Tombol Angka (1, 2, 3, ...) ---
+            for (let i = 1; i <= totalPages; i++) {
+                const pageLi = document.createElement('li');
+                pageLi.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                pageLi.innerHTML = `<a class="page-link" href="#" data-page="${i}">${i}</a>`;
+                paginationWrapper.appendChild(pageLi);
+            }
+
+            // --- Tombol "Berikutnya" (Next) ---
+            const nextLi = document.createElement('li');
+            nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+            nextLi.innerHTML = `<a class="page-link" href="#" data-page="next"><i class="bi bi-chevron-right"></i></a>`;
+            paginationWrapper.appendChild(nextLi);
+        }
+
+        // --- Event Listener untuk Klik ---
+        paginationWrapper.addEventListener('click', function(event) {
+            // Mencegah link berpindah halaman
+            event.preventDefault(); 
+            
+            const clickedElement = event.target.closest('.page-link');
+
+            // Jika yang diklik bukan link atau dalam kondisi disabled, abaikan
+            if (!clickedElement || clickedElement.parentElement.classList.contains('disabled')) {
+                return;
+            }
+
+            const pageTarget = clickedElement.dataset.page;
+
+            // Logika untuk mengubah halaman
+            if (pageTarget === 'prev') {
+                if (currentPage > 1) {
+                    currentPage--;
+                }
+            } else if (pageTarget === 'next') {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                }
+            } else {
+                currentPage = parseInt(pageTarget);
+            }
+            
+            // Setelah halaman berubah, perbarui tampilan item dan tombol paginasi
+            displayItems();
+            setupPagination();
+        });
+
+        // --- Inisialisasi ---
+        // Tampilkan item dan tombol untuk pertama kali saat halaman dimuat
+        displayItems();
+        setupPagination();
+    });
+    </script>
 
       <div class="pagination-container mt-5 d-flex justify-content-center" data-aos="fade-up" style="display: none;">
         <nav aria-label="Faculty pagination">
