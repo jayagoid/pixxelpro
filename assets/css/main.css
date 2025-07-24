@@ -1140,34 +1140,34 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about {
+.tentang {
   --heading-color: #cc0000;
 }
 
-.about .about-content h2 {
+.tentang .tentang-content h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   font-weight: 700;
 }
 
-.about .about-content h3 {
+.tentang .tentang-content h3 {
   color: var(--accent-color);
   font-weight: 600;
   margin-bottom: 10px;
   font-size: 1.1rem;
 }
 
-.about .about-content p {
+.tentang .tentang-content p {
   margin-bottom: 30px;
 }
 
-.about .about-content .timeline {
+.tentang .tentangt-content .timeline {
   position: relative;
   margin-top: 40px;
   padding-left: 30px;
 }
 
-.about .about-content .timeline:before {
+.tentang .tentang-content .timeline:before {
   content: "";
   position: absolute;
   left: 0;
@@ -1177,16 +1177,16 @@ section,
   background-color: color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
-.about .about-content .timeline .timeline-item {
+.tentang .tentang-content .timeline .timeline-item {
   position: relative;
   margin-bottom: 30px;
 }
 
-.about .about-content .timeline .timeline-item:last-child {
+.tentang .tentang-content .timeline .timeline-item:last-child {
   margin-bottom: 0;
 }
 
-.about .about-content .timeline .timeline-item .timeline-dot {
+.tentang .tentang-content .timeline .timeline-item .timeline-dot {
   position: absolute;
   left: -35px;
   top: 5px;
@@ -1196,14 +1196,14 @@ section,
   background-color: var(--accent-color);
 }
 
-.about .about-content .timeline .timeline-item .timeline-content h4 {
+.tentang .tentang-content .timeline .timeline-item .timeline-content h4 {
   font-weight: 700;
   font-size: 1.25rem;
   margin-bottom: 10px;
   color: var(--heading-color);
 }
 
-.about .about-content .timeline .timeline-item .timeline-content p {
+.tentang .tentang-content .timeline .timeline-item .timeline-content p {
   margin-bottom: 0;
 }
 
@@ -1211,12 +1211,12 @@ section,
   position: relative;
 }
 
-.about .about-image img {
+.tentang .tentang-image img {
   width: 100%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.about .about-image .mission-vision {
+.tentang .tentang-image .mission-vision {
   margin-top: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1310,7 +1310,7 @@ section,
   font-weight: 600;
 }
 
-.about .core-values .value-card p {
+.tentang .core-values .value-card p {
   font-size: 0.95rem;
   margin-bottom: 0;
 }
