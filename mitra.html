@@ -4,25 +4,30 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Mitra - PixxelPro</title>
+  <title>About - Mitra</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
+  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
+  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+<<<<<<< HEAD
   <style>
     /* Mengatur gambar agar mengisi penuh dan menyatu dengan kartu */
     .faculty-card .faculty-image {
@@ -86,6 +91,8 @@
     }
   </style>
 
+=======
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
 </head>
 
 <body class="beranda-page">
@@ -94,14 +101,16 @@
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
         <img src="assets/img/logo.webp" alt="">
         <h1 class="sitename">PixxelPro</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li class="dropdown"><a href="about.html" class="active"><span>Tentang</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="index.html" class="active">Beranda</a></li>
+          <li class="dropdown"><a href="about.html"><span>Tentang</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="tentang.html">Tentang Kami</a></li>
               <li><a href="pendaftaran.html">Pendaftaran</a></li>
@@ -110,6 +119,7 @@
               <li><a href="fasilitas.html">Fasilitas</a></li>
             </ul>
           </li>
+
           <li><a href="galeri.html">Galeri</a></li>
           <li><a href="berita.html">Berita</a></li>
           <li><a href="acara.html">Acara</a></li>
@@ -136,6 +146,7 @@
 
   <main class="main">
 
+    <!-- Page Title -->
     <div class="page-title light-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
         <h1 class="mb-2 mb-lg-0">Mitra</h1>
@@ -146,30 +157,45 @@
           </ol>
         </nav>
       </div>
-    </div>
-    <section id="faculty--staff" class="faculty--staff section">
+    </div><!-- End Page Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+   <main class="main">
 
-        <div class="row mb-5">
-          <div class="col-lg-8 mx-auto">
-            <div class="faculty-search">
-              <div class="input-group">
-                <input type="text" id="klienSearchInput" class="form-control" placeholder="Cari klien berdasarkan nama...">
-                <button class="search-btn" type="button">
-                  <i class="bi bi-search"></i>
-                </button>
-              </div>
-              <div id="klienFilterContainer" class="search-filters mt-3 d-flex flex-wrap">
-                <div class="filter-item active">Semua</div>
-                <div class="filter-item">SMK</div>
-                <div class="filter-item">Universitas</div>
-              </div>
+  <!---<div class="page-title light-background">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <h1 class="mb-2 mb-lg-0">Klien Kami</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li class="current">Klien</li>
+        </ol>
+      </nav>
+    </div>-->
+  </div><section id="faculty--staff" class="faculty--staff section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+          <div class="faculty-search">
+            <div class="input-group">
+              <input type="text" id="klienSearchInput" class="form-control" placeholder="Cari klien berdasarkan nama...">
+              <button class="search-btn" type="button">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+            <div id="klienFilterContainer" class="search-filters mt-3 d-flex flex-wrap">
+              <div class="filter-item active">Semua</div>
+              <div class="filter-item">SMK</div>
+              <div class="filter-item">Universitas</div>
             </div>
           </div>
         </div>
+      </div>
 
+      <div class="faculty-grid">
         <div id="klienGrid" class="row g-4">
+<<<<<<< HEAD
           <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
             <div class="faculty-card">
               <div class="faculty-image">
@@ -303,42 +329,428 @@
             </div>
           </div>
           </div>
+=======
+<div class="faculty-grid">
+  <div id="smkGrid" class="row g-4">
 
+    <div class="col-lg-4 col-md-6" data-category="SMK">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK 1 TEMPEH.webp" class="img-fluid" alt="Logo SMK 1">
+        </div>
+        <div class="faculty-info">
+          <h3>SMK 1 TEMPEH</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="SMK">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK DLANGGU MOJOKERTO.webp" class="img-fluid" alt="Logo SMK 2">
+        </div>
+        <div class="faculty-info">
+          <h3>SMK DLANGGU MOJOKERTO</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="SMK">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK MUHAMMADIYAN 1 PANDAAN.webp" class="img-fluid" alt="Logo SMK 3">
+        </div>
+        <div class="faculty-info">
+          <h3>SMK MUHAMMADIYAH 1 PANDAAN</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="Teknik Komputer">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK PGRI 2 MALANG.webp" class="img-fluid" alt="Logo SMK 4">
+        </div>
+        <div class="faculty-info">
+          <h3>SMK PGRI 2 MALANG</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 1 DOKO.webp" class="img-fluid" alt="Logo SMK 5">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 1 DOKO</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="SMK">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 1 KRAKSAKAN.webp" class="img-fluid" alt="Logo SMK 6">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 1 KRAKSAKAN</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="SMK">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 1 PASURUAN.webp" class="img-fluid" alt="Logo SMK 7">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 1 PASURUAN</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="SMK">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 11 MALANG.PNG.webp" class="img-fluid" alt="Logo SMK 8">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 11 MALANG</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="SMK">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 2 BLITAR.webp" class="img-fluid" alt="Logo SMK 9">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 2 BLITAR</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="SMK">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 2 TRENGGALEK. PNG.webp" class="img-fluid" alt="Logo SMK 10">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 2 TRENGGALEK</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="Bisnis Manajemen">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 6 KUPANG.PNG.webp" class="img-fluid" alt="Logo SMK 11">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 6 KUPANG</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="Teknik Otomotif">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK 1 TUREN.webp" class="img-fluid" alt="Logo SMK 12">
+        </div>
+        <div class="faculty-info">
+          <h3>SMK 1 TUREN</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
+
+<<<<<<< HEAD
         <div class="pagination-container mt-5 d-flex justify-content-center" data-aos="fade-up">
           <nav aria-label="Faculty pagination">
             <ul class="pagination" id="pagination"></ul>
           </nav>
+=======
+    <div class="col-lg-4 col-md-6" data-category="Pariwisata">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK PGRI 3 MALANG.webp" class="img-fluid" alt="Logo SMK 13">
         </div>
+        <div class="faculty-info">
+          <h3>SMK PGRI 3 MALANG</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
 
+    <div class="col-lg-4 col-md-6" data-category="Teknik Komputer">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK 1 MALANG.webp" class="img-fluid" alt="Logo SMK 14">
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
+        </div>
+        <div class="faculty-info">
+          <h3>SMK 1 MALANG</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK 5 MALANG.webp" class="img-fluid" alt="Logo SMK 15">
+        </div>
+        <div class="faculty-info">
+          <h3>SMK 5 MALANG</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="Bisnis Manajemen">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK PURWOSARI.webp" class="img-fluid" alt="Logo SMK 16">
+        </div>
+        <div class="faculty-info">
+          <h3>SMK PURWOSARI</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="Teknik Otomotif">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK NU PONCOKUSUMO.webp" class="img-fluid" alt="Logo SMK 17">
+        </div>
+        <div class="faculty-info">
+          <h3>SMK NU PONCOKUSUMO</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="Pariwisata">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK PGRI BINANGUN.webp" class="img-fluid" alt="Logo SMK 18">
+        </div>
+        <div class="faculty-info">
+          <h3>SMK PGRI BINANGUN</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="Teknik Komputer">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK NMC MALANG.webp" class="img-fluid" alt="Logo SMK 19">
+        </div>
+        <div class="faculty-info">
+          <h3>SMK NMC MALANG</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK MUHAMMADIYAN 1 KEPANJEN.webp" class="img-fluid" alt="Logo SMK 20">
+        </div>
+        <div class="faculty-info">
+          <h3>SMK MUHAMMADIYAH 1 KEPANJEN</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 1 Sukorejo.webp" class="img-fluid" alt="Logo SMK 20">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 1 Sukorejo</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 2 Sukorejo.webp" class="img-fluid" alt="Logo SMK 20">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 2 Sukorejo</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 1 Wonorejo.webp" class="img-fluid" alt="Logo SMK 20">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 1 Wonorejo</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 3 Jember.webp" class="img-fluid" alt="Logo SMK 20">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 3 Jember </h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 1 Nganjuk.webp" class="img-fluid" alt="Logo SMK 20">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 1 Nganjuk</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 4 Malang.webp" class="img-fluid" alt="Logo SMK 20">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 4 Malang</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 2 Ende.webp" class="img-fluid" alt="Logo SMK 20">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 2 Ende</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 1 Kras.webp" class="img-fluid" alt="Logo SMK 20">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 1 Kras</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 1 Blitar.webp" class="img-fluid" alt="Logo SMK 20">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 1 Blitar</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 1 Sampang.webp" class="img-fluid" alt="Logo SMK 20">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 1 Sampang</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+     <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMKN 3 Batu.webp" class="img-fluid" alt="Logo SMK 20">
+        </div>
+        <div class="faculty-info">
+          <h3>SMKN 3 Batu</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+    
+     <div class="col-lg-4 col-md-6" data-category="Kesehatan">
+      <div class="faculty-card">
+        <div class="faculty-image">
+          <img src="assets/img/about/SMK Widyagama.webp" class="img-fluid" alt="Logo SMK 20">
+        </div>
+        <div class="faculty-info">
+          <h3>SMK Widyagama</h3>
+          <p class="position">Lokasi atau Jurusan Unggulan</p>
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+</div>
+        </div>
       </div>
 
-    </section>
-  </main>
-
-  <footer id="footer" class="footer position-relative light-background">
-  </footer>
-
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <div id="preloader"></div>
-
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-
-  <script src="assets/js/main.js"></script>
-
+<<<<<<< HEAD
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // --- Konfigurasi ---
       const itemsPerPage = 10; // PERMINTAAN: Diubah menjadi 10 item per halaman
       let currentPage = 1;
+=======
+      <div class="pagination-container mt-5 d-flex justify-content-center" data-aos="fade-up" style="display: none;">
+        <nav aria-label="Faculty pagination">
+          <ul class="pagination">
+            <li class="page-item disabled"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+          </ul>
+        </nav>
+      </div>
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
 
+<<<<<<< HEAD
       // --- Elemen DOM ---
       const searchInput = document.getElementById('klienSearchInput');
       const filterContainer = document.getElementById('klienFilterContainer');
@@ -346,7 +758,11 @@
       let allKlienItems = Array.from(klienGrid.querySelectorAll('.klien-item'));
       const paginationContainer = document.getElementById('pagination');
       const paginationNav = document.querySelector('.pagination-container');
+=======
+    </div>
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
 
+<<<<<<< HEAD
       /**
        * FUNGSI BARU: Mengurutkan item berdasarkan nama (abjad)
        */
@@ -366,17 +782,48 @@
        * Fungsi utama untuk memperbarui tampilan grid dan paginasi
        */
       function updateDisplay() {
+=======
+  </section></main>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Ambil semua elemen yang diperlukan
+    const searchInput = document.getElementById('klienSearchInput');
+    const filterContainer = document.getElementById('klienFilterContainer');
+    const klienItems = document.querySelectorAll('#klienGrid .col-lg-4');
+
+    // Fungsi utama untuk memfilter dan mencari
+    function filterAndSearch() {
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
         const searchTerm = searchInput.value.toLowerCase();
         const activeFilter = filterContainer.querySelector('.filter-item.active').textContent;
 
+<<<<<<< HEAD
         const filteredItems = allKlienItems.filter(item => {
           const klienName = item.querySelector('h3').textContent.toLowerCase();
           const klienCategory = item.dataset.category;
           const textMatch = klienName.includes(searchTerm);
           const categoryMatch = (activeFilter === 'Semua' || klienCategory === activeFilter);
           return textMatch && categoryMatch;
-        });
+=======
+        klienItems.forEach(item => {
+            const klienName = item.querySelector('h3').textContent.toLowerCase();
+            const klienCategory = item.dataset.category;
 
+            // Cek kondisi pencocokan
+            const textMatch = klienName.includes(searchTerm);
+            const categoryMatch = (activeFilter === 'Semua' || klienCategory === activeFilter);
+            
+            // Tampilkan atau sembunyikan berdasarkan kedua kondisi
+            if (textMatch && categoryMatch) {
+                item.style.display = ''; // Tampilkan item
+            } else {
+                item.style.display = 'none'; // Sembunyikan item
+            }
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
+        });
+    }
+
+<<<<<<< HEAD
         setupPagination(filteredItems.length);
         displayPage(filteredItems);
       }
@@ -404,21 +851,89 @@
         if (pageCount <= 1) {
           paginationNav.style.display = 'none';
           return;
-        }
-        paginationNav.style.display = 'flex';
+=======
+    // 2. Tambahkan event listener untuk kolom pencarian
+    searchInput.addEventListener('input', filterAndSearch);
 
+    // 3. Tambahkan event listener untuk tombol filter
+    filterContainer.addEventListener('click', function(e) {
+        // Pastikan yang diklik adalah .filter-item
+        if (e.target.classList.contains('filter-item')) {
+            // Hapus kelas 'active' dari semua tombol
+            filterContainer.querySelectorAll('.filter-item').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Tambahkan kelas 'active' ke tombol yang baru diklik
+            e.target.classList.add('active');
+            
+            // Jalankan fungsi filter
+            filterAndSearch();
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
+        }
+    });
+});
+</script>
+  <footer id="footer" class="footer position-relative light-background">
+
+<<<<<<< HEAD
         const prevLi = document.createElement('li');
         prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
         prevLi.innerHTML = `<a class="page-link" href="#" data-page="prev"><i class="bi bi-chevron-left"></i></a>`;
         paginationContainer.appendChild(prevLi);
+=======
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">College</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>info@example.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
 
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
+
+<<<<<<< HEAD
         for (let i = 1; i <= pageCount; i++) {
           const pageLi = document.createElement('li');
           pageLi.className = `page-item ${i === currentPage ? 'active' : ''}`;
           pageLi.innerHTML = `<a class="page-link" href="#" data-page="${i}">${i}</a>`;
           paginationContainer.appendChild(pageLi);
         }
+=======
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
 
+<<<<<<< HEAD
         const nextLi = document.createElement('li');
         nextLi.className = `page-item ${currentPage === pageCount ? 'disabled' : ''}`;
         nextLi.innerHTML = `<a class="page-link" href="#" data-page="next"><i class="bi bi-chevron-right"></i></a>`;
@@ -430,7 +945,34 @@
         currentPage = 1;
         updateDisplay();
       });
+=======
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Hic solutasetp</h4>
+          <ul>
+            <li><a href="#">Molestiae accusamus iure</a></li>
+            <li><a href="#">Excepturi dignissimos</a></li>
+            <li><a href="#">Suscipit distinctio</a></li>
+            <li><a href="#">Dilecta</a></li>
+            <li><a href="#">Sit quas consectetur</a></li>
+          </ul>
+        </div>
 
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Nobis illum</h4>
+          <ul>
+            <li><a href="#">Ipsam</a></li>
+            <li><a href="#">Laudantium dolorum</a></li>
+            <li><a href="#">Dinera</a></li>
+            <li><a href="#">Trodelas</a></li>
+            <li><a href="#">Flexo</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
+
+<<<<<<< HEAD
       filterContainer.addEventListener('click', (e) => {
         if (e.target.classList.contains('filter-item')) {
           filterContainer.querySelector('.active').classList.remove('active');
@@ -443,7 +985,14 @@
       paginationContainer.addEventListener('click', (e) => {
         e.preventDefault();
         const target = e.target.closest('.page-link');
+=======
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
 
+    </div>
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
+
+<<<<<<< HEAD
         if (!target || target.parentElement.classList.contains('disabled')) return;
         
         const pageValue = target.dataset.page;
@@ -455,7 +1004,14 @@
           return klienName.includes(searchTerm) && (activeFilter === 'Semua' || klienCategory === activeFilter);
         }).length;
         const totalPages = Math.ceil(filteredItemsCount / itemsPerPage);
+=======
+  </footer>
 
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
+
+<<<<<<< HEAD
         if (pageValue === 'prev') {
           if (currentPage > 1) currentPage--;
         } else if (pageValue === 'next') {
@@ -465,12 +1021,31 @@
         }
         updateDisplay();
       });
+=======
+  <!-- Preloader -->
+  <div id="preloader"></div>
 
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
+
+<<<<<<< HEAD
       // --- Inisialisasi ---
       sortItems(); // Panggil fungsi urutkan pertama kali
       updateDisplay(); // Tampilkan data awal yang sudah urut dan siap paginasi
     });
   </script>
+=======
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+>>>>>>> acda2fe8e2f4fbc2daf78b363acb6e239d4dd976
 
 </body>
 
