@@ -146,38 +146,41 @@
             </div>
 
        <div class="contact-form-card" data-aos="fade-up" data-aos-delay="400">
-              <h3>Tanya Seputar Magang</h3>
+  <h3>Tanya Seputar Magang</h3>
 
-               <form id="whatsapp-form">
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input type="text" name="name" class="row g-3">
-                <div class="col-12">
-                    <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Lengkap*" required="">
-                </div>
-
-                <div class="col-12">
-                    <select id="pendidikan" name="pendidikan" class="form-select" required="">
-                        <option value="" selected disabled>Pilih Pendidikan*</option>
-                        <option value="SMK">SMK</option>
-                        <option value="Mahasiswa">Mahasiswa</option>
-                    </select>
-                </div>
-
-                <div class="col-12">
-                    <textarea id="pertanyaan" name="pertanyaan" class="form-control" rows="6" placeholder="Tulis pertanyaan Anda di sini...*" required=""></textarea>
-                </div>
-
-                <div class="form-submit">
-                  <button type="submit">Kirim via WhatsApp</button>
-                  <div class="social-links">
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+  <form id="whatsapp-form">
+    <div class="row g-3">
+      <!-- Nama -->
+      <div class="col-12">
+        <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Lengkap*" required>
       </div>
+
+      <!-- Pendidikan -->
+      <div class="col-12">
+        <select id="pendidikan" name="pendidikan" class="form-select" required>
+          <option value="" selected disabled>Pilih Pendidikan*</option>
+          <option value="SMK">SMK</option>
+          <option value="Mahasiswa">Mahasiswa</option>
+        </select>
+      </div>
+
+      <!-- Pertanyaan -->
+      <div class="col-12">
+        <textarea id="pertanyaan" name="pertanyaan" class="form-control" rows="6" placeholder="Tulis pertanyaan Anda di sini...*" required></textarea>
+      </div>
+
+      <!-- Tombol Submit -->
+      <div class="col-12 form-submit">
+        <button type="submit">Kirim via WhatsApp</button>
+      </div>
+
+      <!-- Social Links (jika diperlukan) -->
+      <div class="col-12 social-links">
+        <!-- Tambahkan tautan sosial di sini jika ada -->
+      </div>
+    </div>
+  </form>
+</div>
     
 
 <script>
