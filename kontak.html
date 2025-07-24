@@ -99,7 +99,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="contact-main-wrapper">
           <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d126441.15400699251!2d112.5933301!3d-7.9693599!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78832bbb140db7%3A0x448828e68806a4b6!2sTempat%20PKL%20PSG%20Prakerin%20SMK%20dan%20Magang%20Mahasiswa%20di%20Malang!5e0!3m2!1sid!2sid!4v1753322757184!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126438.2836607938!2d112.631783!3d-7.97864535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd62822063dc2fb%3A0x78879446481a4da2!2sMalang%2C%20Kota%20Malang%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1753362439866!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
 
           <div class="contact-content">
@@ -145,46 +145,63 @@
               </div>
             </div>
 
-            <div class="contact-form-container" data-aos="fade-up" data-aos-delay="400">
-              <h3>Get in Touch</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing.</p>
-
-              <form action="forms/contact.php" method="post" class="php-email-form">
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
-                  </div>
-                  <div class="col-md-6 form-group mt-3 mt-md-0">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
-                  </div>
-                </div>
-                <div class="form-group mt-3">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
-                </div>
-                <div class="form-group mt-3">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required=""></textarea>
+           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+    <div class="contact-form-card">
+        <h3 class="section-subtitle">Tanya Seputar Magang</h3>
+        <form id="whatsapp-form">
+            <div class="row g-3">
+                <div class="col-12">
+                    <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Lengkap*" required="">
                 </div>
 
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="col-12">
+                    <select id="pendidikan" name="pendidikan" class="form-select" required="">
+                        <option value="" selected disabled>Pilih Pendidikan*</option>
+                        <option value="SMK">SMK</option>
+                        <option value="Mahasiswa">Mahasiswa</option>
+                    </select>
                 </div>
 
-                <div class="form-submit">
-                  <button type="submit">Send Message</button>
-                  <div class="social-links">
-                    <a href="#"><i class="bi bi-twitter"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                  </div>
+                <div class="col-12">
+                    <textarea id="pertanyaan" name="pertanyaan" class="form-control" rows="6" placeholder="Tulis pertanyaan Anda di sini...*" required=""></textarea>
                 </div>
-              </form>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-request">Kirim via WhatsApp</button>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('whatsapp-form').addEventListener('submit', function(event) {
+        // Mencegah form dari pengiriman standar
+        event.preventDefault();
+
+        // Nomor WhatsApp tujuan (gunakan format internasional tanpa spasi atau tanda hubung)
+        const nomorWA = '62895639068080';
+
+        // Ambil data dari setiap kolom form
+        const nama = document.getElementById('nama').value;
+        const pendidikan = document.getElementById('pendidikan').value;
+        const pertanyaan = document.getElementById('pertanyaan').value;
+
+        // Buat format pesan yang akan dikirim
+        // %0A digunakan untuk membuat baris baru di URL
+        const pesanTeks = `Halo, saya ingin bertanya seputar magang.%0A
+%0A*Nama:* ${nama}
+*Pendidikan:* ${pendidikan}
+*Pertanyaan:*
+${pertanyaan}`;
+
+        // Buat URL lengkap untuk WhatsApp
+        const waUrl = `https://api.whatsapp.com/send?phone=${nomorWA}&text=${pesanTeks}`;
+
+        // Buka URL WhatsApp di tab baru
+        window.open(waUrl, '_blank');
+    });
+</script>
     </section><!-- /Contact Section -->
 
   </main>
