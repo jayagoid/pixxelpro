@@ -4,28 +4,74 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>About - Mitra</title>
+  <title>Mitra - PixxelPro</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  
+  <style>
+    /* Mengatur gambar agar menyatu dengan kartu */
+    .faculty-card .faculty-image {
+      height: 180px; /* Tinggi gambar dibuat seragam */
+      overflow: hidden;
+      border-top-left-radius: 8px; /* Sudut tumpul hanya di atas */
+      border-top-right-radius: 8px;
+    }
+
+    .faculty-card .faculty-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Membuat gambar mengisi frame tanpa distorsi */
+      transition: transform 0.3s ease;
+    }
+
+    /* Efek hover untuk memperbesar gambar */
+    .faculty-card:hover .faculty-image img {
+      transform: scale(1.1);
+    }
+    
+    /* Mengatur kartu agar seragam dan rapi */
+    .klien-item {
+      display: flex; /* Diperlukan agar tinggi kartu sama */
+      flex-direction: column;
+    }
+    
+    .faculty-card {
+      height: 100%; /* Membuat semua kartu dalam 1 baris sama tinggi */
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    
+    /* Efek hover untuk mengangkat kartu */
+    .faculty-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    /* Mengatur area teks di bawah gambar */
+    .faculty-card .faculty-info {
+      padding: 1rem;
+      flex-grow: 1; /* Memastikan area teks mengisi sisa ruang */
+    }
+  </style>
 
 </head>
 
@@ -35,8 +81,6 @@
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
         <img src="assets/img/logo.webp" alt="">
         <h1 class="sitename">PixxelPro</h1>
       </a>
@@ -53,21 +97,10 @@
               <li><a href="fasilitas.html">Fasilitas</a></li>
             </ul>
           </li>
-
           <li><a href="galeri.html">Galeri</a></li>
           <li><a href="berita.html">Berita</a></li>
           <li><a href="acara.html">Acara</a></li>
           <li><a href="alumni.html">Alumni</a></li>
-          <li class="dropdown"><a href="#"><span>Halaman</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="berita-details.html">Berita Details</a></li>
-              <li><a href="acara-details.html">Acara Details</a></li>
-              <li><a href="privacy.html">Privacy</a></li>
-              <li><a href="terms-of-service.html">Terms of Service</a></li>
-              <li><a href="404.html">Error 404</a></li>
-              <li><a href="starter-page.html">Starter Page</a></li>
-            </ul>
-          </li>
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -80,7 +113,6 @@
 
   <main class="main">
 
-    <!-- Page Title -->
     <div class="page-title light-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
         <h1 class="mb-2 mb-lg-0">Mitra</h1>
@@ -91,583 +123,434 @@
           </ol>
         </nav>
       </div>
-    </div><!-- End Page Title -->
+    </div><section id="faculty--staff" class="faculty--staff section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-   <main class="main">
-
-  <!---<div class="page-title light-background">
-    <div class="container d-lg-flex justify-content-between align-items-center">
-      <h1 class="mb-2 mb-lg-0">Klien Kami</h1>
-      <nav class="breadcrumbs">
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li class="current">Klien</li>
-        </ol>
-      </nav>
-    </div>-->
-  </div><section id="faculty--staff" class="faculty--staff section">
-
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-      <div class="row mb-5">
-        <div class="col-lg-8 mx-auto">
-          <div class="faculty-search">
-            <div class="input-group">
-              <input type="text" id="klienSearchInput" class="form-control" placeholder="Cari klien berdasarkan nama...">
-              <button class="search-btn" type="button">
-                <i class="bi bi-search"></i>
-              </button>
-            </div>
-            <div id="klienFilterContainer" class="search-filters mt-3 d-flex flex-wrap">
-              <div class="filter-item active">Semua</div>
-              <div class="filter-item">SMK</div>
-              <div class="filter-item">Universitas</div>
+        <div class="row mb-5">
+          <div class="col-lg-8 mx-auto">
+            <div class="faculty-search">
+              <div class="input-group">
+                <input type="text" id="klienSearchInput" class="form-control" placeholder="Cari klien berdasarkan nama...">
+                <button class="search-btn" type="button">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+              <div id="klienFilterContainer" class="search-filters mt-3 d-flex flex-wrap">
+                <div class="filter-item active">Semua</div>
+                <div class="filter-item">SMK</div>
+                <div class="filter-item">Universitas</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="faculty-grid">
         <div id="klienGrid" class="row g-4">
-<div class="faculty-grid">
-  <div id="smkGrid" class="row g-4">
+          
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%201%20TEMPEH.webp" class="img-fluid" alt="Logo SMK 1 TEMPEH">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK 1 TEMPEH</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="SMK">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK 1 TEMPEH.webp" class="img-fluid" alt="Logo SMK 1">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK 1 TEMPEH</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%20DLANGGU%20MOJOKERTO.webp" class="img-fluid" alt="Logo SMK DLANGGU MOJOKERTO">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK DLANGGU MOJOKERTO</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="SMK">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK DLANGGU MOJOKERTO.webp" class="img-fluid" alt="Logo SMK 2">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK DLANGGU MOJOKERTO</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%20MUHAMMADIYAN%201%20PANDAAN.webp" class="img-fluid" alt="Logo SMK MUHAMMADIYAN 1 PANDAAN">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK MUHAMMADIYAN 1 PANDAAN</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="SMK">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK MUHAMMADIYAN 1 PANDAAN.webp" class="img-fluid" alt="Logo SMK 3">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK MUHAMMADIYAN 1 PANDAAN</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%20PGRI%202%20MALANG.webp" class="img-fluid" alt="Logo SMK PGRI 2 MALANG">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK PGRI 2 MALANG</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%201%20DOKO.webp" class="img-fluid" alt="Logo SMKN 1 DOKO">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 1 DOKO</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="Teknik Komputer">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK PGRI 2 MALANG.webp" class="img-fluid" alt="Logo SMK 4">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK PGRI 2 MALANG</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 1 DOKO.webp" class="img-fluid" alt="Logo SMK 5">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 1 DOKO</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%201%20KRAKSAKAN.webp" class="img-fluid" alt="Logo SMKN 1 KRAKSAKAN">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 1 KRAKSAKAN</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="SMK">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 1 KRAKSAKAN.webp" class="img-fluid" alt="Logo SMK 6">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 1 KRAKSAKAN</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%201%20PASURUAN.webp" class="img-fluid" alt="Logo SMKN 1 PASURUAN">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 1 PASURUAN</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="SMK">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 1 PASURUAN.webp" class="img-fluid" alt="Logo SMK 7">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 1 PASURUAN</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%2011%20MALANG.PNG.webp" class="img-fluid" alt="Logo SMKN 11 MALANG">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 11 MALANG</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="SMK">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 11 MALANG.PNG.webp" class="img-fluid" alt="Logo SMK 8">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 11 MALANG</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%202%20BLITAR.webp" class="img-fluid" alt="Logo SMKN 2 BLITAR">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 2 BLITAR</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="SMK">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 2 BLITAR.webp" class="img-fluid" alt="Logo SMK 9">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 2 BLITAR</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%202%20TRENGGALEK.%20PNG.webp" class="img-fluid" alt="Logo SMKN 2 TRENGGALEK">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 2 TRENGGALEK</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="SMK">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 2 TRENGGALEK. PNG.webp" class="img-fluid" alt="Logo SMK 10">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 2 TRENGGALEK</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%206%20KUPANG.PNG.webp" class="img-fluid" alt="Logo SMKN 6 KUPANG">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 6 KUPANG</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="Bisnis Manajemen">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 6 KUPANG.PNG.webp" class="img-fluid" alt="Logo SMK 11">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 6 KUPANG</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%201%20TUREN.webp" class="img-fluid" alt="Logo SMK 1 TUREN">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK 1 TUREN</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="Teknik Otomotif">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK 1 TUREN.webp" class="img-fluid" alt="Logo SMK 12">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK 1 TUREN</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%20PGRI%203%20MALANG.webp" class="img-fluid" alt="Logo SMK PGRI 3 MALANG">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK PGRI 3 MALANG</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="Pariwisata">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK PGRI 3 MALANG.webp" class="img-fluid" alt="Logo SMK 13">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK PGRI 3 MALANG</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%201%20MALANG.webp" class="img-fluid" alt="Logo SMK 1 MALANG">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK 1 MALANG</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="Teknik Komputer">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK 1 MALANG.webp" class="img-fluid" alt="Logo SMK 14">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK 1 MALANG</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%205%20MALANG.webp" class="img-fluid" alt="Logo SMK 5 MALANG">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK 5 MALANG</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK 5 MALANG.webp" class="img-fluid" alt="Logo SMK 15">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK 5 MALANG</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%20PURWOSARI.webp" class="img-fluid" alt="Logo SMK PURWOSARI">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK PURWOSARI</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="Bisnis Manajemen">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK PURWOSARI.webp" class="img-fluid" alt="Logo SMK 16">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK PURWOSARI</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%20NU%20PONCOKUSUMO.webp" class="img-fluid" alt="Logo SMK NU PONCOKUSUMO">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK NU PONCOKUSUMO</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="Teknik Otomotif">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK NU PONCOKUSUMO.webp" class="img-fluid" alt="Logo SMK 17">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK NU PONCOKUSUMO</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%20PGRI%20BINANGUN.webp" class="img-fluid" alt="Logo SMK PGRI BINANGUN">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK PGRI BINANGUN</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="Pariwisata">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK PGRI BINANGUN.webp" class="img-fluid" alt="Logo SMK 18">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK PGRI BINANGUN</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%20NMC%20MALANG.webp" class="img-fluid" alt="Logo SMK NMC MALANG">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK NMC MALANG</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="Teknik Komputer">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK NMC MALANG.webp" class="img-fluid" alt="Logo SMK 19">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK NMC MALANG</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%20MUHAMMADIYAN%201%20KEPANJEN.webp" class="img-fluid" alt="Logo SMK MUHAMMADIYAH 1 KEPANJEN">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK MUHAMMADIYAH 1 KEPANJEN</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%201%20Sukorejo.webp" class="img-fluid" alt="Logo SMKN 1 Sukorejo">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 1 Sukorejo</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%202%20Sukorejo.webp" class="img-fluid" alt="Logo SMKN 2 Sukorejo">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 2 Sukorejo</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%201%20Wonorejo.webp" class="img-fluid" alt="Logo SMKN 1 Wonorejo">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 1 Wonorejo</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%203%20Jember.webp" class="img-fluid" alt="Logo SMKN 3 Jember">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 3 Jember</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%201%20Nganjuk.webp" class="img-fluid" alt="Logo SMKN 1 Nganjuk">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 1 Nganjuk</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%204%20Malang.webp" class="img-fluid" alt="Logo SMKN 4 Malang">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 4 Malang</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%202%20Ende.webp" class="img-fluid" alt="Logo SMKN 2 Ende">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 2 Ende</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%201%20Kras.webp" class="img-fluid" alt="Logo SMKN 1 Kras">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 1 Kras</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%201%20Blitar.webp" class="img-fluid" alt="Logo SMKN 1 Blitar">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 1 Blitar</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%201%20Sampang.webp" class="img-fluid" alt="Logo SMKN 1 Sampang">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 1 Sampang</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK MUHAMMADIYAN 1 KEPANJEN.webp" class="img-fluid" alt="Logo SMK 20">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK MUHAMMADIYAH 1 KEPANJEN</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 1 Sukorejo.webp" class="img-fluid" alt="Logo SMK 20">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 1 Sukorejo</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 2 Sukorejo.webp" class="img-fluid" alt="Logo SMK 20">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 2 Sukorejo</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 1 Wonorejo.webp" class="img-fluid" alt="Logo SMK 20">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 1 Wonorejo</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 3 Jember.webp" class="img-fluid" alt="Logo SMK 20">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 3 Jember </h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 1 Nganjuk.webp" class="img-fluid" alt="Logo SMK 20">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 1 Nganjuk</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 4 Malang.webp" class="img-fluid" alt="Logo SMK 20">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 4 Malang</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 2 Ende.webp" class="img-fluid" alt="Logo SMK 20">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 2 Ende</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 1 Kras.webp" class="img-fluid" alt="Logo SMK 20">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 1 Kras</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 1 Blitar.webpclass="img-fluid" alt="Logo SMK 20">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 1 Blitar</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 1 Sampang.webp" class="img-fluid" alt="Logo SMK 20">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 1 Sampang</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-     <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMKN 3 Batu.webp" class="img-fluid" alt="Logo SMK 20">
-        </div>
-        <div class="faculty-info">
-          <h3>SMKN 3 Batu</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-    
-     <div class="col-lg-4 col-md-6" data-category="Kesehatan">
-      <div class="faculty-card">
-        <div class="faculty-image">
-          <img src="assets/img/about/SMK Widyagama.webp" class="img-fluid" alt="Logo SMK 20">
-        </div>
-        <div class="faculty-info">
-          <h3>SMK Widyagama</h3>
-          <p class="position">Lokasi atau Jurusan Unggulan</p>
-        </div>
-      </div>
-    </div>
-    
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMKN%203%20Batu.webp" class="img-fluid" alt="Logo SMKN 3 Batu">
+              </div>
+              <div class="faculty-info">
+                <h3>SMKN 3 Batu</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 klien-item" data-category="SMK">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="assets/img/about/SMK%20Widyagama.webp" class="img-fluid" alt="Logo SMK Widyagama">
+              </div>
+              <div class="faculty-info">
+                <h3>SMK Widyagama</h3>
+                <p class="position">Lokasi atau Jurusan Unggulan</p>
+              </div>
+            </div>
+          </div>
 
-  </div>
-</div>
         </div>
+
+        <div class="pagination-container mt-5 d-flex justify-content-center" data-aos="fade-up">
+          <nav aria-label="Faculty pagination">
+            <ul class="pagination" id="pagination">
+              </ul>
+          </nav>
+        </div>
+
       </div>
+    </section>
 
-      <div class="pagination-container mt-5 d-flex justify-content-center" data-aos="fade-up" style="display: none;">
-        <nav aria-label="Faculty pagination">
-          <ul class="pagination">
-            <li class="page-item disabled"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
-          </ul>
-        </nav>
-      </div>
+  </main>
 
-    </div>
-
-  </section></main>
-  <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 1. Ambil semua elemen yang diperlukan
-    const searchInput = document.getElementById('klienSearchInput');
-    const filterContainer = document.getElementById('klienFilterContainer');
-    const klienItems = document.querySelectorAll('#klienGrid .col-lg-4');
-
-    // Fungsi utama untuk memfilter dan mencari
-    function filterAndSearch() {
-        const searchTerm = searchInput.value.toLowerCase();
-        const activeFilter = filterContainer.querySelector('.filter-item.active').textContent;
-
-        klienItems.forEach(item => {
-            const klienName = item.querySelector('h3').textContent.toLowerCase();
-            const klienCategory = item.dataset.category;
-
-            // Cek kondisi pencocokan
-            const textMatch = klienName.includes(searchTerm);
-            const categoryMatch = (activeFilter === 'Semua' || klienCategory === activeFilter);
-            
-            // Tampilkan atau sembunyikan berdasarkan kedua kondisi
-            if (textMatch && categoryMatch) {
-                item.style.display = ''; // Tampilkan item
-            } else {
-                item.style.display = 'none'; // Sembunyikan item
-            }
-        });
-    }
-
-    // 2. Tambahkan event listener untuk kolom pencarian
-    searchInput.addEventListener('input', filterAndSearch);
-
-    // 3. Tambahkan event listener untuk tombol filter
-    filterContainer.addEventListener('click', function(e) {
-        // Pastikan yang diklik adalah .filter-item
-        if (e.target.classList.contains('filter-item')) {
-            // Hapus kelas 'active' dari semua tombol
-            filterContainer.querySelectorAll('.filter-item').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            // Tambahkan kelas 'active' ke tombol yang baru diklik
-            e.target.classList.add('active');
-            
-            // Jalankan fungsi filter
-            filterAndSearch();
-        }
-    });
-});
-</script>
   <footer id="footer" class="footer position-relative light-background">
+      </footer>
 
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">College</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
-          <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
-
-    </div>
-
-  </footer>
-
-  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -677,8 +560,169 @@ document.addEventListener('DOMContentLoaded', function() {
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // --- Konfigurasi ---
+      const itemsPerPage = 10; // Menampilkan 10 item per halaman
+      let currentPage = 1;
+
+      // --- Elemen DOM ---
+      const searchInput = document.getElementById('klienSearchInput');
+      const filterContainer = document.getElementById('klienFilterContainer');
+      const klienGrid = document.getElementById('klienGrid');
+      let allKlienItems = Array.from(klienGrid.querySelectorAll('.klien-item')); // Ambil semua item
+      const paginationContainer = document.getElementById('pagination');
+      const paginationNav = document.querySelector('.pagination-container');
+
+      /**
+       * Mengurutkan item berdasarkan nama (abjad)
+       */
+      function sortItemsByName() {
+        allKlienItems.sort((a, b) => {
+          const nameA = a.querySelector('h3').textContent.trim();
+          const nameB = b.querySelector('h3').textContent.trim();
+          return nameA.localeCompare(nameB); // Gunakan localeCompare untuk pengurutan string yang akurat
+        });
+        
+        // Kosongkan grid lalu isi kembali dengan item yang sudah diurutkan
+        klienGrid.innerHTML = ''; 
+        allKlienItems.forEach(item => klienGrid.appendChild(item));
+      }
+
+      /**
+       * Fungsi utama untuk memperbarui tampilan
+       */
+      function updateDisplay() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const activeFilter = filterContainer.querySelector('.filter-item.active').textContent;
+
+        // Filter item berdasarkan pencarian dan kategori
+        const filteredItems = allKlienItems.filter(item => {
+          const klienName = item.querySelector('h3').textContent.toLowerCase();
+          const klienCategory = item.dataset.category;
+          
+          const textMatch = klienName.includes(searchTerm);
+          const categoryMatch = (activeFilter === 'Semua' || klienCategory === activeFilter);
+          
+          return textMatch && categoryMatch;
+        });
+
+        // Buat tombol paginasi berdasarkan hasil filter
+        setupPagination(filteredItems.length);
+        
+        // Tampilkan item untuk halaman saat ini
+        displayPage(filteredItems);
+      }
+      
+      /**
+       * Menampilkan item untuk halaman yang spesifik
+       */
+      function displayPage(items) {
+        // Sembunyikan semua item terlebih dahulu
+        allKlienItems.forEach(item => item.style.display = 'none');
+        
+        // Tentukan item mana yang akan ditampilkan
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const pageItems = items.slice(startIndex, endIndex);
+
+        // Tampilkan item untuk halaman ini
+        pageItems.forEach(item => item.style.display = 'block'); // Gunakan 'block' atau ''
+      }
+
+      /**
+       * Membuat tombol-tombol paginasi 1, 2, 3, dst.
+       */
+      function setupPagination(totalItems) {
+          paginationContainer.innerHTML = ''; // Kosongkan tombol lama
+          const pageCount = Math.ceil(totalItems / itemsPerPage);
+
+          // Sembunyikan navigasi jika hanya ada satu halaman atau kurang
+          if (pageCount <= 1) {
+              paginationNav.style.display = 'none';
+              return;
+          }
+          paginationNav.style.display = 'flex';
+
+          // Tombol "Sebelumnya"
+          const prevLi = document.createElement('li');
+          prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+          prevLi.innerHTML = `<a class="page-link" href="#" data-page="prev"><i class="bi bi-chevron-left"></i></a>`;
+          paginationContainer.appendChild(prevLi);
+
+          // Tombol Angka Halaman
+          for (let i = 1; i <= pageCount; i++) {
+              const pageLi = document.createElement('li');
+              pageLi.className = `page-item ${i === currentPage ? 'active' : ''}`;
+              pageLi.innerHTML = `<a class="page-link" href="#" data-page="${i}">${i}</a>`;
+              paginationContainer.appendChild(pageLi);
+          }
+          
+          // Tombol "Berikutnya"
+          const nextLi = document.createElement('li');
+          nextLi.className = `page-item ${currentPage === pageCount ? 'disabled' : ''}`;
+          nextLi.innerHTML = `<a class="page-link" href="#" data-page="next"><i class="bi bi-chevron-right"></i></a>`;
+          paginationContainer.appendChild(nextLi);
+      }
+      
+      // --- Event Listeners ---
+
+      // Listener untuk input pencarian
+      searchInput.addEventListener('input', () => {
+        currentPage = 1; // Kembali ke halaman 1 setiap kali ada pencarian baru
+        updateDisplay();
+      });
+
+      // Listener untuk tombol filter
+      filterContainer.addEventListener('click', (e) => {
+        if (e.target.classList.contains('filter-item')) {
+          filterContainer.querySelector('.active').classList.remove('active');
+          e.target.classList.add('active');
+          currentPage = 1; // Kembali ke halaman 1 setiap kali filter diubah
+          updateDisplay();
+        }
+      });
+      
+      // Listener untuk klik pada tombol paginasi
+      paginationContainer.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = e.target.closest('.page-link');
+
+          if (!target || target.parentElement.classList.contains('disabled')) {
+              return; // Abaikan jika mengklik tombol yang non-aktif
+          }
+          
+          const pageValue = target.dataset.page;
+          
+          // Hitung ulang total halaman berdasarkan filter saat ini
+          const filteredItemCount = allKlienItems.filter(item => {
+              const searchTerm = searchInput.value.toLowerCase();
+              const activeFilter = filterContainer.querySelector('.filter-item.active').textContent;
+              return item.querySelector('h3').textContent.toLowerCase().includes(searchTerm) &&
+                     (activeFilter === 'Semua' || item.dataset.category === activeFilter);
+          }).length;
+          const totalPages = Math.ceil(filteredItemCount / itemsPerPage);
+
+          // Logika pindah halaman
+          if (pageValue === 'prev') {
+              if (currentPage > 1) currentPage--;
+          } else if (pageValue === 'next') {
+              if (currentPage < totalPages) currentPage++;
+          } else {
+              currentPage = parseInt(pageValue);
+          }
+
+          updateDisplay(); // Perbarui tampilan setelah pindah halaman
+      });
+
+      // --- Inisialisasi ---
+      // Panggil fungsi ini saat halaman pertama kali dimuat
+      sortItemsByName(); // 1. Urutkan item terlebih dahulu
+      updateDisplay();   // 2. Tampilkan hasilnya
+    });
+  </script>
 
 </body>
 
