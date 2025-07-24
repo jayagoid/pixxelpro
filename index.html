@@ -60,7 +60,7 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html" class="active">Beranda</a></li>
-          <li class="dropdown"><a href=><span>Tentang</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="tentangkami.html"><span>Tentang</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="tentangkami.html">Tentang Kami</a></li>
               <li><a href="pendaftaran.html">Pendaftaran</a></li>
@@ -1397,9 +1397,9 @@ Di rancang untuk membantu UMKM dan institusi pendidikan berkembang secara digita
               class="col-lg-4 col-md-6"
               data-aos="zoom-in"
               data-aos-delay="200"
-              data-category="website"
+              
             >
-              <div class="event-item">
+              <div class="event-item" data-category="website">
                 <div class="event-image">
                   <img
                     src="assets/img/education/events-3.webp"
@@ -1445,9 +1445,9 @@ Di rancang untuk membantu UMKM dan institusi pendidikan berkembang secara digita
               class="col-lg-4 col-md-6"
               data-aos="zoom-in"
               data-aos-delay="300"
-              data-category="website"
+              
             >
-              <div class="event-item">
+              <div class="event-item" data-category="website">
                 <div class="event-image">
                   <img
                     src="assets/img/education/events-5.webp"
@@ -1494,10 +1494,10 @@ Di rancang untuk membantu UMKM dan institusi pendidikan berkembang secara digita
               class="col-lg-4 col-md-6"
               data-aos="zoom-in"
               data-aos-delay="400"
-              data-category="website"
+              
             >
               <div class="event-item">
-                <div class="event-image">
+                <div class="event-image" data-category="website">
                   <img
                     src="assets/img/education/events-7.webp"
                     alt="Art Exhibition"
@@ -1542,10 +1542,10 @@ Di rancang untuk membantu UMKM dan institusi pendidikan berkembang secara digita
               class="col-lg-4 col-md-6"
               data-aos="zoom-in"
               data-aos-delay="200"
-              data-category="digital"
+              
             >
               <div class="event-item">
-                <div class="event-image">
+                <div class="event-image" data-category="digital">
                   <img
                     src="assets/img/education/events-2.webp"
                     alt="Science Fair"
@@ -1589,9 +1589,9 @@ Di rancang untuk membantu UMKM dan institusi pendidikan berkembang secara digita
               class="col-lg-4 col-md-6"
               data-aos="zoom-in"
               data-aos-delay="300"
-              data-category="jurnalistik"
+              
             >
-              <div class="event-item">
+              <div class="event-item" data-category="jurnalistik">
                 <div class="event-image">
                   <img
                     src="assets/img/education/events-8.webp"
@@ -1688,16 +1688,7 @@ Di rancang untuk membantu UMKM dan institusi pendidikan berkembang secara digita
           const eventList = document.querySelectorAll(".event-item");
           const categoryButtons =
             document.querySelectorAll("#categories button");
-
-          // Fungsi pencarian
-          searchInput.addEventListener("input", () => {
-            const query = searchInput.value.toLowerCase();
-            eventList.forEach((event) => {
-              const title = event.querySelector("h3").textContent.toLowerCase();
-              event.style.display = title.includes(query) ? "" : "none";
-            });
-          });
-
+          
           // Fungsi kategori
           categoryButtons.forEach((button) => {
             button.addEventListener("click", () => {
