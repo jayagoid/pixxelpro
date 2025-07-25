@@ -1468,9 +1468,10 @@ section,
 }
 
 .featured-programs .program-item:hover .item-arrow i {
-  transform: translateX(5px);
-  color: var(--accent-color);
+  transform: translate(5px, -5px);
+  color: #0056b3;
 }
+
 
 .featured-programs .program-item .item-icon {
   width: 70px;
