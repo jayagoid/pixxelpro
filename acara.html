@@ -47,6 +47,28 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
+
+    <!--style untuk calender-->
+<style>
+  .highlight {
+    color: #d10000;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .highlight::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: #d10000;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+</style>
+
   </head>
 
   <body class="beranda-page">
@@ -377,25 +399,6 @@
       </thead>
       <tbody id="calendarBody">
         <!-- Java -->
-        <style>
-  .highlight {
-    color: #d10000;
-    font-weight: bold;
-    position: relative;
-  }
-
-  .highlight::after {
-    content: "";
-    width: 5px;
-    height: 5px;
-    background-color: #d10000;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 4px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-</style>
       </tbody>
     </table>
   </div>
