@@ -399,7 +399,9 @@
   const events = {
     "2025-07-28": true,
     "2025-07-29": true,
-    "2025-07-30": true
+    "2025-07-30": true,
+    "2025-08-4": true,
+    "2025-08-5": true
   };
 
   function renderCalendar(date) {
@@ -431,12 +433,7 @@
           cell.innerHTML = "";
         } else {
           cell.textContent = dayCounter;
-
-          // Tambah class has-event jika ingin menandai tanggal
-          if ([6, 13, 15, 24].includes(dayCounter)) {
-            cell.classList.add("has-event");
-          }
-
+          
           dayCounter++;
         }
         row.appendChild(cell);
