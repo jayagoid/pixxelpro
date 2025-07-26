@@ -145,41 +145,41 @@
               </div>
             </div>
 
-       <div class="contact-form-card" data-aos="fade-up" data-aos-delay="400">
-  <h3>Tanya Seputar Magang</h3>
+       <!-- Form Tanya Seputar Magang sebagai Card -->
+<div class="contact-card contact-form-card" data-aos="fade-up" data-aos-delay="400">
+  <div class="icon-box">
+    <i class="bi bi-chat-dots"></i>
+  </div>
+  <div class="contact-text">
+    <h4>Tanya Seputar Magang</h4>
+    <form id="whatsapp-form">
+      <div class="row g-3">
+        <!-- Nama -->
+        <div class="col-12">
+          <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Lengkap*" required>
+        </div>
 
-  <form id="whatsapp-form">
-    <div class="row g-3">
-      <!-- Nama -->
-      <div class="col-12">
-        <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Lengkap*" required>
-      </div>
+        <!-- Pendidikan -->
+        <div class="col-12">
+          <select id="pendidikan" name="pendidikan" class="form-select" required>
+            <option value="" selected disabled>Pilih Pendidikan*</option>
+            <option value="SMK">SMK</option>
+            <option value="Mahasiswa">Mahasiswa</option>
+          </select>
+        </div>
 
-      <!-- Pendidikan -->
-      <div class="col-12">
-        <select id="pendidikan" name="pendidikan" class="form-select" required>
-          <option value="" selected disabled>Pilih Pendidikan*</option>
-          <option value="SMK">SMK</option>
-          <option value="Mahasiswa">Mahasiswa</option>
-        </select>
-      </div>
+        <!-- Pertanyaan -->
+        <div class="col-12">
+          <textarea id="pertanyaan" name="pertanyaan" class="form-control" rows="4" placeholder="Tulis pertanyaan Anda di sini...*" required></textarea>
+        </div>
 
-      <!-- Pertanyaan -->
-      <div class="col-12">
-        <textarea id="pertanyaan" name="pertanyaan" class="form-control" rows="6" placeholder="Tulis pertanyaan Anda di sini...*" required></textarea>
+        <!-- Tombol Submit -->
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary w-100">Kirim via WhatsApp</button>
+        </div>
       </div>
-
-      <!-- Tombol Submit -->
-      <div class="col-12 form-submit">
-        <button type="submit">Kirim via WhatsApp</button>
-      </div>
-
-      <!-- Social Links (jika diperlukan) -->
-      <div class="col-12 social-links">
-        <!-- Tambahkan tautan sosial di sini jika ada -->
-      </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
     
 
