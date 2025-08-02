@@ -318,19 +318,91 @@
         </div>
       </section>
 <!-- Blog Section 5 Section -->
-<section id="blog-section-5" class="blog-section-5 section">
+<section id="blog-section-5" class="blog-section-5 section" style="padding: 40px 0; background-color: #f8f9fa;">
+
+  <style>
+    .blog-section-5 .post-item {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      padding: 16px;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .blog-section-5 .post-item:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-section-5 .post-img img {
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .blog-section-5 .post-content {
+      padding-top: 12px;
+    }
+
+    .blog-section-5 .post-item.d-flex {
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .blog-section-5 .post-item.d-flex .post-img {
+      flex-shrink: 0;
+      width: 40%;
+    }
+
+    .blog-section-5 .post-item.d-flex .post-content {
+      width: 60%;
+    }
+
+    .post-category {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .post-img {
+      position: relative;
+    }
+
+    .post-content h3 {
+      font-size: 18px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .post-content p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .post-content time {
+      font-size: 13px;
+      color: #888;
+    }
+  </style>
 
   <div class="container section-title" data-aos="fade-up">
     <h2>Artikel Terkait</h2>
   </div>
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row">
+    <div class="row gy-4">
 
+      <!-- Artikel Kiri -->
       <div class="col-lg-5">
         <article class="post-item" data-aos="fade-up">
           <div class="post-img">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJrHXCmPFmZzXBbAObf3mAyWm869CDo5cXWEQZHz4qfT21JKZl7QQX2DfJBlOmlBLvfsLOVGqeurH7Ogr5FsCgCuMlnL1RQeIu4hzZ5alO3Tf4gChWkJVCjn4Jv7YhSPhiQ2yhl_UD73RFFqs4SO-VYLmCYmCOthOsdywh7yWS08QnVcxNKY2TkBtNTh4/s1575/Slide44.JPG" alt="" class="img-fluid" loading="lazy">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJrHXCmPFmZzXBbAObf3mAyWm869CDo5cXWEQZHz4qfT21JKZl7QQX2DfJBlOmlBLvfsLOVGqeurH7Ogr5FsCgCuMlnL1RQeIu4hzZ5alO3Tf4gChWkJVCjn4Jv7YhSPhiQ2yhl_UD73RFFqs4SO-VYLmCYmCOthOsdywh7yWS08QnVcxNKY2TkBtNTh4/s1575/Slide44.JPG" alt="Tips Magang Digital Marketing SMK Lamongan" class="img-fluid" loading="lazy">
             <span class="post-category">UMKM</span>
           </div>
           <div class="post-content">
@@ -340,23 +412,24 @@
         </article>
       </div>
 
+      <!-- Artikel Kanan -->
       <div class="col-lg-7">
         <div class="post-list">
 
           <article class="post-item d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="post-img">
-              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyeRS6OSuONf72Yl0pyBY8U-Pz2-_GIQigQGmy7o_rZ6qTv_hxuvmM3FElhyFODYg-QwkIeZCYBzj69Sgo2dLv6Lxa-6tZ9l9h4sos93BIfJlmMvtkUnzIj5ggWyDdlbePbpP-QulSd8yyuxPVohNPdmnE0QyGKRHdck3tYAP54qSZNHkjZH98QjVZoLo/w640-h480/Strategi%20Bangun%20Personal%20Branding.jpg" alt="" class="img-fluid">
+              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyeRS6OSuONf72Yl0pyBY8U-Pz2-_GIQigQGmy7o_rZ6qTv_hxuvmM3FElhyFODYg-QwkIeZCYBzj69Sgo2dLv6Lxa-6tZ9l9h4sos93BIfJlmMvtkUnzIj5ggWyDdlbePbpP-QulSd8yyuxPVohNPdmnE0QyGKRHdck3tYAP54qSZNHkjZH98QjVZoLo/w640-h480/Strategi%20Bangun%20Personal%20Branding.jpg" alt="Strategi Personal Branding" class="img-fluid">
             </div>
             <div class="post-content">
               <time datetime="2024-05-30">15 Feb 2025</time>
               <h3><a href="blog-details2.html">5 Strategi Bangun Personal Branding di Instagram & TikTok</a></h3>
-              <p>Langkah-langkah Branding di Instagram & TikTok </p>
+              <p>Langkah-langkah Branding di Instagram & TikTok</p>
             </div>
           </article>
 
           <article class="post-item d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="post-img">
-              <img src="assets/img/porto/campus2.webp" alt="" class="img-fluid">
+              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKIoJtWu75HGNfF-nczLbrl7staFc4D4iMAOufSRwvio1rozM8m2NFg0TTw41_6UODCcxiY4AnXngRZhCjga3h40PqItlBNX4cOSvsXn_U5PBSboalzrOMOxEyZZtj9RjY38un9dHVc1Z1U8AB_B_cY6z7At3rYN1gr_gAg7_x3rBZlryNzaL86XlTTDY/w640-h480/Copywriting%20Untuk%20Funnerl%20Marketing.jpg" alt="Copywriting Funnel Marketing" class="img-fluid">
             </div>
             <div class="post-content">
               <time datetime="2024-04-20">20 Juni 2025</time>
