@@ -769,67 +769,62 @@
       }
 
 
-      // --- Inisialisasi ---
-      // Tampilkan item dan tombol untuk pertama kali saat halaman dimuat
-      displayItems();
-      setupPagination();
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // 1. Ambil semua elemen yang diperlukan
-      const searchInput = document.getElementById('klienSearchInput');
-      const filterContainer = document.getElementById('klienFilterContainer');
-      const klienItems = document.querySelectorAll('#klienGrid .col-lg-3'); // Updated selector
+      <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 1. Ambil semua elemen yang diperlukan
+    const searchInput = document.getElementById('klienSearchInput');
+    const filterContainer = document.getElementById('klienFilterContainer');
+    const klienItems = document.querySelectorAll('#klienGrid .col-lg-3');
 
-      // Fungsi utama untuk memfilter dan mencari
-      function filterAndSearch() {
-        const searchTerm = searchInput.value.toLowerCase();
-        const activeFilter = filterContainer.querySelector('.filter-item.active').textContent;
+    // Fungsi utama untuk memfilter dan mencari
+    function filterAndSearch() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const activeFilter = filterContainer.querySelector('.filter-item.active').textContent;
 
-        klienItems.forEach(item => {
-          const klienName = item.querySelector('h3').textContent.toLowerCase();
-          const klienCategory = item.dataset.category;
+      klienItems.forEach(item => {
+        // Ambil teks nama sekolah dan ubah ke huruf kecil
+        const klienName = item.querySelector('h3').textContent.toLowerCase();
+        
+        // <<< BARU: Ambil teks kota dari elemen <p> di bawahnya
+        // Menggunakan optional chaining (?.) untuk mencegah error jika elemen <p> tidak ada
+        const klienCity = item.querySelector('p')?.textContent.toLowerCase() || ''; 
+        
+        const klienCategory = item.dataset.category;
 
-          // Cek kondisi pencocokan
-          const textMatch = klienName.includes(searchTerm);
-          const categoryMatch = (activeFilter === 'Semua' || klienCategory === activeFilter);
+        // <<< DIPERBARUI: Cek kondisi pencocokan pada NAMA atau KOTA
+        // Kondisi akan true jika searchTerm ditemukan di dalam nama ATAU di dalam kota
+        const textMatch = klienName.includes(searchTerm) || klienCity.includes(searchTerm);
+        
+        const categoryMatch = (activeFilter === 'Semua' || klienCategory === activeFilter);
 
-          // Tampilkan atau sembunyikan berdasarkan kedua kondisi
-          if (textMatch && categoryMatch) {
-            item.style.display = ''; // Tampilkan item
-          } else {
-            item.style.display = 'none'; // Sembunyikan item
-          }
-        });
-      }
+        // Tampilkan atau sembunyikan berdasarkan kedua kondisi
+        if (textMatch && categoryMatch) {
+          item.style.display = ''; // Tampilkan item
+        } else {
+          item.style.display = 'none'; // Sembunyikan item
+        }
+      });
+    }
 
-      // 2. Tambahkan event listener untuk kolom pencarian
-      if (searchInput) {
-        searchInput.addEventListener('input', filterAndSearch);
-      }
+    // 2. Tambahkan event listener untuk kolom pencarian
+    if (searchInput) {
+      searchInput.addEventListener('input', filterAndSearch);
+    }
 
-
-      // 3. Tambahkan event listener untuk tombol filter
-      if (filterContainer) {
-        filterContainer.addEventListener('click', function(e) {
-          // Pastikan yang diklik adalah .filter-item
-          if (e.target.classList.contains('filter-item')) {
-            // Hapus kelas 'active' dari semua tombol
-            filterContainer.querySelectorAll('.filter-item').forEach(btn => {
-              btn.classList.remove('active');
-            });
-            // Tambahkan kelas 'active' ke tombol yang baru diklik
-            e.target.classList.add('active');
-
-            // Jalankan fungsi filter
-            filterAndSearch();
-          }
-        });
-      }
-    });
-  </script>
-  </section>
+    // 3. Tambahkan event listener untuk tombol filter
+    if (filterContainer) {
+      filterContainer.addEventListener('click', function(e) {
+        if (e.target.classList.contains('filter-item')) {
+          filterContainer.querySelectorAll('.filter-item').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          e.target.classList.add('active');
+          filterAndSearch();
+        }
+      });
+    }
+  });
+</script>
   <!-- /Pagination 2 Section -->
 
   </main>
