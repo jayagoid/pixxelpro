@@ -776,59 +776,63 @@
     });
   </script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // 1. Ambil semua elemen yang diperlukan
-      const searchInput = document.getElementById('klienSearchInput');
-      const filterContainer = document.getElementById('klienFilterContainer');
-      const klienItems = document.querySelectorAll('#klienGrid .col-lg-3'); // Updated selector
+  document.addEventListener('DOMContentLoaded', function() {
+    // 1. Ambil semua elemen yang diperlukan
+    const searchInput = document.getElementById('klienSearchInput');
+    const filterContainer = document.getElementById('klienFilterContainer');
+    const klienItems = document.querySelectorAll('#klienGrid .col-lg-3');
 
-      // Fungsi utama untuk memfilter dan mencari
-      function filterAndSearch() {
-        const searchTerm = searchInput.value.toLowerCase();
-        const activeFilter = filterContainer.querySelector('.filter-item.active').textContent;
+    // Fungsi utama untuk memfilter dan mencari
+    function filterAndSearch() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const activeFilter = filterContainer.querySelector('.filter-item.active').textContent;
 
-        klienItems.forEach(item => {
-          const klienName = item.querySelector('h3').textContent.toLowerCase();
-          const klienCategory = item.dataset.category;
+      klienItems.forEach(item => {
+        // --- PERUBAHAN DI SINI ---
+        // Ambil teks dari nama instansi (h3) dan juga lokasi (p)
+        const klienName = item.querySelector('h3').textContent.toLowerCase();
+        const klienLocation = item.querySelector('p.position').textContent.toLowerCase();
+        const klienCategory = item.dataset.category;
 
-          // Cek kondisi pencocokan
-          const textMatch = klienName.includes(searchTerm);
-          const categoryMatch = (activeFilter === 'Semua' || klienCategory === activeFilter);
+        // Cek kondisi pencocokan: apakah teks pencarian ada di NAMA atau di LOKASI
+        const textMatch = klienName.includes(searchTerm) || klienLocation.includes(searchTerm);
+        // --- AKHIR PERUBAHAN ---
 
-          // Tampilkan atau sembunyikan berdasarkan kedua kondisi
-          if (textMatch && categoryMatch) {
-            item.style.display = ''; // Tampilkan item
-          } else {
-            item.style.display = 'none'; // Sembunyikan item
-          }
-        });
-      }
+        const categoryMatch = (activeFilter === 'Semua' || klienCategory === activeFilter);
 
-      // 2. Tambahkan event listener untuk kolom pencarian
-      if (searchInput) {
-        searchInput.addEventListener('input', filterAndSearch);
-      }
+        // Tampilkan atau sembunyikan berdasarkan kedua kondisi
+        if (textMatch && categoryMatch) {
+          item.style.display = ''; // Tampilkan item
+        } else {
+          item.style.display = 'none'; // Sembunyikan item
+        }
+      });
+    }
 
+    // 2. Tambahkan event listener untuk kolom pencarian
+    if (searchInput) {
+      searchInput.addEventListener('input', filterAndSearch);
+    }
 
-      // 3. Tambahkan event listener untuk tombol filter
-      if (filterContainer) {
-        filterContainer.addEventListener('click', function(e) {
-          // Pastikan yang diklik adalah .filter-item
-          if (e.target.classList.contains('filter-item')) {
-            // Hapus kelas 'active' dari semua tombol
-            filterContainer.querySelectorAll('.filter-item').forEach(btn => {
-              btn.classList.remove('active');
-            });
-            // Tambahkan kelas 'active' ke tombol yang baru diklik
-            e.target.classList.add('active');
+    // 3. Tambahkan event listener untuk tombol filter
+    if (filterContainer) {
+      filterContainer.addEventListener('click', function(e) {
+        // Pastikan yang diklik adalah .filter-item
+        if (e.target.classList.contains('filter-item')) {
+          // Hapus kelas 'active' dari semua tombol
+          filterContainer.querySelectorAll('.filter-item').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          // Tambahkan kelas 'active' ke tombol yang baru diklik
+          e.target.classList.add('active');
 
-            // Jalankan fungsi filter
-            filterAndSearch();
-          }
-        });
-      }
-    });
-  </script>
+          // Jalankan fungsi filter
+          filterAndSearch();
+        }
+      });
+    }
+  });
+</script>
   </section>
   <!-- /Pagination 2 Section -->
 
