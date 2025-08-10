@@ -767,64 +767,86 @@
           setupPagination();
         });
       }
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // 1. Ambil semua elemen yang diperlukan dari halaman HTML
+  const searchInput = document.getElementById('klienSearchInput');
+  const filterContainer = document.getElementById('klienFilterContainer');
+  // Ambil semua kartu mitra yang ada di dalam grid
+  const klienItems = document.querySelectorAll('#klienGrid .col-lg-3');
 
+  /**
+   * Fungsi utama untuk melakukan pencarian dan pemfilteran.
+   * Fungsi ini akan dipanggil setiap kali ada input di kolom pencarian atau saat filter diubah.
+   */
+  function filterAndSearch() {
+    // Ambil teks pencarian dan ubah menjadi huruf kecil agar tidak case-sensitive
+    const searchTerm = searchInput.value.toLowerCase();
+    // Ambil teks dari filter yang sedang aktif (misal: "Semua", "SMK", atau "Universitas")
+    const activeFilter = filterContainer.querySelector('.filter-item.active').textContent;
 
-      <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // 1. Ambil semua elemen yang diperlukan
-    const searchInput = document.getElementById('klienSearchInput');
-    const filterContainer = document.getElementById('klienFilterContainer');
-    const klienItems = document.querySelectorAll('#klienGrid .col-lg-3');
+    // Ulangi (loop) setiap kartu mitra satu per satu
+    klienItems.forEach(item => {
+      
+      // Ambil Nama Sekolah dari tag <h3> dan ubah ke huruf kecil
+      const klienName = item.querySelector('h3').textContent.toLowerCase();
+      
+      // Ambil Nama Kota/Jurusan dari tag <p> dan ubah ke huruf kecil
+      // Penggunaan `?.` (optional chaining) mencegah error jika ada kartu yang tidak memiliki tag <p>
+      const klienInfo = item.querySelector('p.position')?.textContent.toLowerCase() || '';
 
-    // Fungsi utama untuk memfilter dan mencari
-    function filterAndSearch() {
-      const searchTerm = searchInput.value.toLowerCase();
-      const activeFilter = filterContainer.querySelector('.filter-item.active').textContent;
+      // Ambil kategori dari atribut data-category (misal: "SMK")
+      const klienCategory = item.dataset.category;
 
-      klienItems.forEach(item => {
-        // Ambil teks nama sekolah dan ubah ke huruf kecil
-        const klienName = item.querySelector('h3').textContent.toLowerCase();
+      // --- Logika Pencocokan ---
+      
+      // 1. Cek Pencocokan Teks: bernilai `true` jika teks pencarian ada di NAMA SEKOLAH atau di INFO KOTA/JURUSAN
+      const textMatch = klienName.includes(searchTerm) || klienInfo.includes(searchTerm);
+      
+      // 2. Cek Pencocokan Kategori: bernilai `true` jika filter aktif adalah "Semua" atau jika kategori item sama dengan filter aktif
+      const categoryMatch = (activeFilter === 'Semua' || klienCategory === activeFilter);
+
+      // Tampilkan atau sembunyikan kartu berdasarkan kedua kondisi di atas
+      // Kartu akan tampil HANYA JIKA kedua kondisi (textMatch DAN categoryMatch) terpenuhi
+      if (textMatch && categoryMatch) {
+        item.style.display = ''; // Tampilkan item
+      } else {
+        item.style.display = 'none'; // Sembunyikan item
+      }
+    });
+  }
+
+  // 2. Tambahkan Event Listener untuk Kolom Pencarian
+  // `input` berarti fungsi akan berjalan setiap kali pengguna mengetik atau menghapus huruf
+  if (searchInput) {
+    searchInput.addEventListener('input', filterAndSearch);
+  }
+
+  // 3. Tambahkan Event Listener untuk Tombol Filter
+  // `click` berarti fungsi akan berjalan saat salah satu tombol di dalam container di-klik
+  if (filterContainer) {
+    filterContainer.addEventListener('click', function(e) {
+      // Pastikan yang diklik adalah elemen dengan kelas '.filter-item'
+      if (e.target.classList.contains('filter-item')) {
         
-        // <<< BARU: Ambil teks kota dari elemen <p> di bawahnya
-        // Menggunakan optional chaining (?.) untuk mencegah error jika elemen <p> tidak ada
-        const klienCity = item.querySelector('p')?.textContent.toLowerCase() || ''; 
+        // Hapus kelas 'active' dari semua tombol filter
+        filterContainer.querySelectorAll('.filter-item').forEach(btn => {
+          btn.classList.remove('active');
+        });
         
-        const klienCategory = item.dataset.category;
+        // Tambahkan kelas 'active' hanya ke tombol yang baru saja diklik
+        e.target.classList.add('active');
 
-        // <<< DIPERBARUI: Cek kondisi pencocokan pada NAMA atau KOTA
-        // Kondisi akan true jika searchTerm ditemukan di dalam nama ATAU di dalam kota
-        const textMatch = klienName.includes(searchTerm) || klienCity.includes(searchTerm);
-        
-        const categoryMatch = (activeFilter === 'Semua' || klienCategory === activeFilter);
-
-        // Tampilkan atau sembunyikan berdasarkan kedua kondisi
-        if (textMatch && categoryMatch) {
-          item.style.display = ''; // Tampilkan item
-        } else {
-          item.style.display = 'none'; // Sembunyikan item
-        }
-      });
-    }
-
-    // 2. Tambahkan event listener untuk kolom pencarian
-    if (searchInput) {
-      searchInput.addEventListener('input', filterAndSearch);
-    }
-
-    // 3. Tambahkan event listener untuk tombol filter
-    if (filterContainer) {
-      filterContainer.addEventListener('click', function(e) {
-        if (e.target.classList.contains('filter-item')) {
-          filterContainer.querySelectorAll('.filter-item').forEach(btn => {
-            btn.classList.remove('active');
-          });
-          e.target.classList.add('active');
-          filterAndSearch();
-        }
-      });
-    }
-  });
+        // Jalankan kembali fungsi filter utama untuk memperbarui tampilan
+        filterAndSearch();
+      }
+    });
+  }
+});
 </script>
+
+   
   <!-- /Pagination 2 Section -->
 
   </main>
